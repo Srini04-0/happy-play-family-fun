@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -57,9 +56,8 @@ const Index = () => {
               </Button>
               <Button 
                 size="lg" 
-                variant="outline" 
                 onClick={scrollToGames}
-                className="border-2 border-white text-white hover:bg-white hover:text-red-500 font-semibold text-lg px-8 py-4 rounded-full transition-all"
+                className="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-semibold text-lg px-8 py-4 rounded-full transform hover:scale-105 transition-all shadow-lg"
               >
                 Explore Games
               </Button>
