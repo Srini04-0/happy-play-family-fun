@@ -6,6 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Clock, Star, Users, Trophy, ShoppingBag } from "lucide-react";
 
 const Index = () => {
+  const scrollToGames = () => {
+    const gamesSection = document.getElementById('games');
+    if (gamesSection) {
+      gamesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -48,7 +55,12 @@ const Index = () => {
               <Button size="lg" className="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-semibold text-lg px-8 py-4 rounded-full transform hover:scale-105 transition-all shadow-lg">
                 Visit Our Location
               </Button>
-              <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-red-500 font-semibold text-lg px-8 py-4 rounded-full transition-all">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                onClick={scrollToGames}
+                className="border-2 border-white text-white hover:bg-white hover:text-red-500 font-semibold text-lg px-8 py-4 rounded-full transition-all"
+              >
                 Explore Games
               </Button>
             </div>
