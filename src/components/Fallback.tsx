@@ -5,23 +5,27 @@ export default function Fallback() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 flex items-center justify-center">
-      <div className="text-center text-white max-w-md mx-auto p-6">
-        <h1 className="text-6xl font-bold mb-4 animate-bounce">HAPPY 2 PLAY</h1>
-        <p className="text-xl mb-4">3D Experience Unavailable</p>
-        <p className="text-sm mb-8 opacity-90">
-          Your browser may not support WebGL or 3D graphics. 
-          Try updating your browser or enabling hardware acceleration.
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-center max-w-md mx-auto p-6">
+        <div className="text-6xl mb-6">🍎</div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          3D Experience Unavailable
+        </h1>
+        <p className="text-lg text-gray-600 mb-2">
+          Your browser may not support WebGL or 3D graphics.
+        </p>
+        <p className="text-sm text-gray-500 mb-8">
+          Try updating your browser or enabling hardware acceleration for the best experience.
         </p>
         <div className="space-y-4">
           <button 
             onClick={handleRetry}
-            className="bg-white text-red-500 px-8 py-3 rounded-full font-bold hover:scale-105 transition-transform mr-4"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 mr-4"
           >
             Try Again
           </button>
-          <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-red-500 transition-colors">
-            View 2D Version
+          <button className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105">
+            Continue to Website
           </button>
         </div>
       </div>

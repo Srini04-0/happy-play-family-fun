@@ -5,12 +5,12 @@ import Scene3D from './Scene3D'
 import Fallback from './Fallback'
 
 function Loading() {
-  console.log('Loading 3D scene...')
+  console.log('Loading Apple-style 3D scene...')
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
-      <div className="text-white text-center">
-        <div className="animate-spin w-16 h-16 border-4 border-red-500 border-t-transparent rounded-full mx-auto mb-4"></div>
-        <p className="text-xl">Loading 3D Experience...</p>
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-8 h-8 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin mx-auto mb-6"></div>
+        <p className="text-gray-600 font-medium">Loading Experience...</p>
       </div>
     </div>
   )
@@ -21,37 +21,28 @@ function ErrorFallback({ error }: { error: Error }) {
   return <Fallback />
 }
 
-// Check WebGL support before rendering
+// Simplified WebGL check
 function checkWebGLSupport() {
   try {
     const canvas = document.createElement('canvas')
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl') as WebGLRenderingContext | null
+    const gl = canvas.getContext('webgl') as WebGLRenderingContext | null
     
     if (!gl) {
       console.warn('WebGL not available')
       return false
     }
     
-    // Check for required extensions
-    const requiredExtensions = ['OES_element_index_uint']
-    for (const ext of requiredExtensions) {
-      if (!gl.getExtension(ext)) {
-        console.warn(`Required WebGL extension ${ext} not available`)
-      }
-    }
-    
-    console.log('WebGL support check passed')
+    console.log('WebGL support confirmed')
     return true
   } catch (error) {
-    console.error('WebGL support check failed:', error)
+    console.error('WebGL check failed:', error)
     return false
   }
 }
 
 export default function Scene3DWrapper() {
-  console.log('Scene3DWrapper rendering')
+  console.log('Apple-style Scene3DWrapper rendering')
   
-  // If WebGL is not supported, show fallback immediately
   if (!checkWebGLSupport()) {
     console.log('WebGL not supported, showing fallback')
     return <Fallback />
@@ -61,7 +52,7 @@ export default function Scene3DWrapper() {
     <ErrorBoundary 
       FallbackComponent={ErrorFallback}
       onError={(error, errorInfo) => {
-        console.error('3D Error:', error, errorInfo)
+        console.error('Apple 3D Scene Error:', error, errorInfo)
       }}
     >
       <Suspense fallback={<Loading />}>
