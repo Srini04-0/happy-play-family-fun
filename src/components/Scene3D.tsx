@@ -142,16 +142,38 @@ function Scene3DContent() {
 }
 
 export default function Scene3D() {
+  console.log('Scene3D component rendering')
+  
+  // Test WebGL support
+  const canvas = document.createElement('canvas')
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+  
+  if (!gl) {
+    console.error('WebGL not supported')
+    throw new Error('WebGL not supported')
+  }
+  
+  console.log('WebGL is supported, proceeding with 3D scene')
+
   return (
     <div className="h-screen w-full">
       <Canvas 
         gl={{ 
           antialias: true, 
-          alpha: true,
-          powerPreference: "default"
+          alpha: false,
+          powerPreference: "high-performance",
+          preserveDrawingBuffer: false,
+          failIfMajorPerformanceCaveat: false
         }}
         dpr={[1, 2]}
         camera={{ position: [0, 0, 10], fov: 75 }}
+        onCreated={(state) => {
+          console.log('Canvas created successfully', state.gl.getParameter(state.gl.VERSION))
+        }}
+        onError={(error) => {
+          console.error('Canvas creation error:', error)
+          throw error
+        }}
       >
         <Suspense fallback={null}>
           <Scene3DContent />
