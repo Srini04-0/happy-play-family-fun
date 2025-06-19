@@ -25,7 +25,7 @@ function ErrorFallback({ error }: { error: Error }) {
 function checkWebGLSupport() {
   try {
     const canvas = document.createElement('canvas')
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl') as WebGLRenderingContext | null
     
     if (!gl) {
       console.warn('WebGL not available')

@@ -168,7 +168,7 @@ export default function Scene3D() {
         dpr={[1, 2]}
         camera={{ position: [0, 0, 10], fov: 75 }}
         onCreated={(state) => {
-          console.log('Canvas created successfully', state.gl.getParameter(state.gl.VERSION))
+          console.log('Canvas created successfully', state.gl.domElement)
         }}
         onError={(error) => {
           console.error('Canvas creation error:', error)
