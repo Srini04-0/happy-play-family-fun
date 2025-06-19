@@ -1,7 +1,7 @@
 
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Text, Float, Sphere, Box, Cone, Environment, PerspectiveCamera } from '@react-three/drei'
-import { useRef } from 'react'
+import { useRef, Suspense } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
@@ -74,7 +74,6 @@ function CenterLogo() {
         color="white"
         anchorX="center"
         anchorY="middle"
-        font="/fonts/inter-bold.woff"
       >
         HAPPY 2 PLAY
       </Text>
@@ -91,54 +90,72 @@ function CenterLogo() {
   )
 }
 
+function Scene3DContent() {
+  return (
+    <>
+      <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+      <OrbitControls 
+        enablePan={true} 
+        enableZoom={true} 
+        enableRotate={true}
+        maxDistance={20}
+        minDistance={5}
+      />
+      
+      <Environment preset="city" />
+      
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} />
+      <pointLight position={[-10, -10, -10]} color="#f97316" />
+      
+      <CenterLogo />
+      
+      {/* Floating Games */}
+      <FloatingGame position={[-4, 2, -2]} color="#10b981" text="Arcade Games" />
+      <FloatingGame position={[4, 2, -2]} color="#3b82f6" text="VR Experience" />
+      <FloatingGame position={[-4, -2, -2]} color="#8b5cf6" text="Laser Tag" />
+      <FloatingGame position={[4, -2, -2]} color="#f59e0b" text="Mini Golf" />
+      
+      {/* Floating Products */}
+      <FloatingProduct position={[-6, 0, -4]} color="#ef4444" />
+      <FloatingProduct position={[6, 0, -4]} color="#f97316" />
+      <FloatingProduct position={[0, 4, -4]} color="#eab308" />
+      <FloatingProduct position={[0, -4, -4]} color="#10b981" />
+      
+      {/* Background elements */}
+      {Array.from({ length: 20 }, (_, i) => (
+        <Float key={i} speed={0.5} rotationIntensity={0.1} floatIntensity={0.3}>
+          <Sphere 
+            position={[
+              (Math.random() - 0.5) * 30,
+              (Math.random() - 0.5) * 20,
+              (Math.random() - 0.5) * 30 - 10
+            ]} 
+            args={[0.1, 16, 16]}
+          >
+            <meshStandardMaterial color="#ffffff" opacity={0.3} transparent />
+          </Sphere>
+        </Float>
+      ))}
+    </>
+  )
+}
+
 export default function Scene3D() {
   return (
     <div className="h-screen w-full">
-      <Canvas>
-        <PerspectiveCamera makeDefault position={[0, 0, 10]} />
-        <OrbitControls 
-          enablePan={true} 
-          enableZoom={true} 
-          enableRotate={true}
-          maxDistance={20}
-          minDistance={5}
-        />
-        
-        <Environment preset="city" />
-        
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
-        <pointLight position={[-10, -10, -10]} color="#f97316" />
-        
-        <CenterLogo />
-        
-        {/* Floating Games */}
-        <FloatingGame position={[-4, 2, -2]} color="#10b981" text="Arcade Games" />
-        <FloatingGame position={[4, 2, -2]} color="#3b82f6" text="VR Experience" />
-        <FloatingGame position={[-4, -2, -2]} color="#8b5cf6" text="Laser Tag" />
-        <FloatingGame position={[4, -2, -2]} color="#f59e0b" text="Mini Golf" />
-        
-        {/* Floating Products */}
-        <FloatingProduct position={[-6, 0, -4]} color="#ef4444" />
-        <FloatingProduct position={[6, 0, -4]} color="#f97316" />
-        <FloatingProduct position={[0, 4, -4]} color="#eab308" />
-        <FloatingProduct position={[0, -4, -4]} color="#10b981" />
-        
-        {/* Background elements */}
-        {Array.from({ length: 20 }, (_, i) => (
-          <Float key={i} speed={0.5} rotationIntensity={0.1} floatIntensity={0.3}>
-            <Sphere 
-              position={[
-                (Math.random() - 0.5) * 30,
-                (Math.random() - 0.5) * 20,
-                (Math.random() - 0.5) * 30 - 10
-              ]} 
-              args={[0.1, 16, 16]}
-            >
-              <meshStandardMaterial color="#ffffff" opacity={0.3} transparent />
-            </Sphere>
-          </Float>
-        ))}
+      <Canvas 
+        gl={{ 
+          antialias: true, 
+          alpha: true,
+          powerPreference: "default"
+        }}
+        dpr={[1, 2]}
+        camera={{ position: [0, 0, 10], fov: 75 }}
+      >
+        <Suspense fallback={null}>
+          <Scene3DContent />
+        </Suspense>
       </Canvas>
       
       {/* 3D UI Overlay */}

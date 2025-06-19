@@ -15,9 +15,19 @@ function Loading() {
   )
 }
 
+function ErrorFallback({ error }: { error: Error }) {
+  console.error('3D Scene Error:', error)
+  return <Fallback />
+}
+
 export default function Scene3DWrapper() {
   return (
-    <ErrorBoundary fallback={<Fallback />}>
+    <ErrorBoundary 
+      FallbackComponent={ErrorFallback}
+      onError={(error, errorInfo) => {
+        console.error('3D Error:', error, errorInfo)
+      }}
+    >
       <Suspense fallback={<Loading />}>
         <Scene3D />
       </Suspense>
