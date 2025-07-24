@@ -63,7 +63,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up hero-glow">
-              Welcome to <span className="text-yellow-300 drop-shadow-lg animate-pulse">Happy 2 Play</span>
+              <span className="text-yellow-300 drop-shadow-lg animate-pulse">Happy 2 Play</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up animation-delay-200">
               Your Ultimate Family Entertainment Destination
