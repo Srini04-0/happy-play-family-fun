@@ -38,6 +38,10 @@ const Index = () => {
                 Products
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
+              <a href="#jobs" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+                Jobs
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
               <a href="#courses" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
                 Courses
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
@@ -127,6 +131,50 @@ const Index = () => {
                     <h3 className="font-semibold text-lg mb-2 group-hover:text-green-500 transition-colors duration-300">Products</h3>
                     <p className="text-gray-600">Premium products with subscription options</p>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Job Offers Section */}
+      <section id="jobs" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-8 animate-fade-in-up">Job Offers</h2>
+            <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
+                <p className="text-lg text-gray-700 mb-6">
+                  Happy 2 Play offers exciting job opportunities for students who are looking for flexible work 
+                  arrangements that fit around their educational needs. Whether you're taking a break from studies, 
+                  pursuing part-time education, or just starting your college journey, we have positions for you.
+                </p>
+                <p className="text-lg text-gray-700 mb-8">
+                  We understand that not everyone follows the traditional full-time study path. That's why we've 
+                  created job opportunities specifically designed for students who have dropped out, are in their 
+                  first or second year of college, or need flexible schedules to balance work and education.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                  <div className="text-center group animate-fade-in-up animation-delay-300">
+                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float">
+                      <Clock className="text-purple-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-purple-500 transition-colors duration-300">Flexible Hours</h3>
+                    <p className="text-gray-600">Part-time positions with schedules that work around your studies and personal commitments</p>
+                  </div>
+                  <div className="text-center group animate-fade-in-up animation-delay-400">
+                    <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float animation-delay-200">
+                      <Star className="text-orange-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-orange-500 transition-colors duration-300">Growth Opportunities</h3>
+                    <p className="text-gray-600">Learn valuable skills in customer service, entertainment management, and team leadership</p>
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl">
+                    Apply Now
+                  </Button>
                 </div>
               </CardContent>
             </Card>
