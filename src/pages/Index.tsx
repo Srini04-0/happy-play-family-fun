@@ -1,11 +1,37 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Clock, Star, Users, Trophy, ShoppingBag } from "lucide-react";
 
 const Index = () => {
+  const [scrollY, setScrollY] = useState(0);
+  const [logoVisible, setLogoVisible] = useState(false);
+  const [logoPositioned, setLogoPositioned] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      
+      // Show logo when user starts scrolling
+      if (currentScrollY > 50 && !logoVisible) {
+        setLogoVisible(true);
+      }
+      
+      // Position logo at top when scrolled enough
+      if (currentScrollY > 300 && !logoPositioned) {
+        setLogoPositioned(true);
+      } else if (currentScrollY <= 300 && logoPositioned) {
+        setLogoPositioned(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [logoVisible, logoPositioned]);
+
   const scrollToGames = () => {
     const gamesSection = document.getElementById('games');
     if (gamesSection) {
@@ -15,6 +41,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Scroll-triggered Logo */}
+      <div className={`scroll-logo ${logoVisible ? 'visible' : ''} ${logoPositioned ? 'positioned' : ''}`}>
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center shadow-lg">
+            <span className="text-white font-bold text-lg">H2P</span>
+          </div>
+          <span className="font-bold text-2xl text-gray-800 logo-glow">Happy 2 Play</span>
+        </div>
+      </div>
+
+      {/* Ethereal Semi-circle at bottom */}
+      <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-48 rounded-t-full ethereal-glow pointer-events-none z-10"></div>
+
       {/* Header */}
       <header className="bg-white shadow-lg sticky top-0 z-50 border-b backdrop-blur-sm bg-white/95">
         <nav className="container mx-auto px-4 py-4">
