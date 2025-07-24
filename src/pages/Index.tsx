@@ -58,16 +58,29 @@ const Index = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
+        
         {/* Floating animation elements */}
         <div className="absolute top-10 left-10 w-4 h-4 bg-yellow-300 rounded-full animate-bounce opacity-70"></div>
         <div className="absolute top-20 right-20 w-6 h-6 bg-white rounded-full animate-pulse opacity-50"></div>
         <div className="absolute bottom-20 left-20 w-3 h-3 bg-red-300 rounded-full animate-ping opacity-60"></div>
         <div className="absolute bottom-32 right-32 w-5 h-5 bg-orange-300 rounded-full animate-bounce delay-300 opacity-70"></div>
         
-        <div className="container mx-auto px-4 text-center relative z-10">
+        {/* Moon Graphic */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10">
+          <div className="w-32 h-32 bg-gradient-to-br from-yellow-200 to-yellow-400 rounded-full moon-rise relative">
+            <div className="absolute inset-2 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-full">
+              <div className="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full opacity-70"></div>
+              <div className="absolute top-8 right-6 w-2 h-2 bg-yellow-400 rounded-full opacity-50"></div>
+              <div className="absolute bottom-6 left-8 w-4 h-4 bg-yellow-400 rounded-full opacity-60"></div>
+              <div className="absolute bottom-8 right-4 w-2 h-2 bg-yellow-400 rounded-full opacity-40"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-20">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up hero-glow">
-              <span className="text-yellow-300 drop-shadow-lg animate-pulse">Happy 2 Play</span>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-rise-glow">
+              <span className="text-yellow-300 drop-shadow-lg">Happy 2 Play</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up animation-delay-200">
               Your Ultimate Family Entertainment Destination
