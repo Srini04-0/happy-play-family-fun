@@ -18,90 +18,61 @@ const Index = () => {
     <div className="min-h-screen bg-background">
 
       {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50 border-b backdrop-blur-sm bg-white/95">
+      <header className="bg-black shadow-lg sticky top-0 z-50 border-b border-gray-800">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3 animate-fade-in-up">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-6">
-                <span className="text-white font-bold text-lg">H2P</span>
-              </div>
-              <span className="font-bold text-2xl text-gray-800 hover:text-red-500 transition-colors duration-300">Happy 2 Play</span>
+            <div className="flex items-center space-x-3">
+              <span className="font-bold text-xl text-white">HAPPY2PLAY</span>
             </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+            <div className="hidden md:flex items-center space-x-8">
+              <span className="text-gray-300 hover:text-white transition-colors duration-300 font-medium cursor-pointer">
+                [THE GREAT MOMENTS]
+              </span>
+              <span className="text-gray-300 hover:text-white transition-colors duration-300 font-medium cursor-pointer">
+                [NEXT YEAR]
+              </span>
+              <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-300 font-medium">
+                [ABOUT]
               </a>
-              <a href="#jobs" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
-                Job Offer
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+              <a href="#jobs" className="text-gray-300 hover:text-white transition-colors duration-300 font-medium">
+                [JOBS]
               </a>
-              <a href="#games" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
-                Games
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+              <a href="#games" className="text-gray-300 hover:text-white transition-colors duration-300 font-medium">
+                [GAMES]
               </a>
-              <a href="#products" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
-                Products
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+              <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-300 font-medium">
+                [CONTACT]
               </a>
-              <a href="#courses" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
-                Courses
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#contact" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              <span className="text-white font-bold">2024</span>
             </div>
           </div>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        
-        {/* Floating animation elements */}
-        <div className="absolute top-10 left-10 w-4 h-4 bg-yellow-300 rounded-full animate-bounce opacity-70"></div>
-        <div className="absolute top-20 right-20 w-6 h-6 bg-white rounded-full animate-pulse opacity-50"></div>
-        <div className="absolute bottom-20 left-20 w-3 h-3 bg-red-300 rounded-full animate-ping opacity-60"></div>
-        <div className="absolute bottom-32 right-32 w-5 h-5 bg-orange-300 rounded-full animate-bounce delay-300 opacity-70"></div>
-        
-        {/* Moon Graphic */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10">
-          <div className="w-32 h-32 bg-gradient-to-br from-yellow-200 to-yellow-400 rounded-full moon-rise relative">
-            <div className="absolute inset-2 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-full">
-              <div className="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full opacity-70"></div>
-              <div className="absolute top-8 right-6 w-2 h-2 bg-yellow-400 rounded-full opacity-50"></div>
-              <div className="absolute bottom-6 left-8 w-4 h-4 bg-yellow-400 rounded-full opacity-60"></div>
-              <div className="absolute bottom-8 right-4 w-2 h-2 bg-yellow-400 rounded-full opacity-40"></div>
-            </div>
-          </div>
-        </div>
+      <section className="min-h-screen bg-gradient-to-br from-lime-400 via-purple-500 to-red-500 relative overflow-hidden flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/10"></div>
         
         <div className="container mx-auto px-4 text-center relative z-20">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-rise-glow">
-              <span className="text-yellow-300 drop-shadow-lg">Happy 2 Play</span>
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-8xl md:text-9xl font-bold mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-lime-400 via-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                Welcome
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up animation-delay-200">
-              Your Ultimate Family Entertainment Destination
+            
+            <div className="mb-12">
+              <p className="text-white/80 text-lg tracking-wider uppercase">[SCROLL]</p>
+            </div>
+            
+            <p className="text-xl text-white/90 mb-16 max-w-2xl mx-auto">
+              Our Partnership Year in Review
             </p>
-            <p className="text-lg mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-              Experience the joy of family fun with our exciting games, activities, and premium products. 
-              Where families come together to play, laugh, and create lasting memories!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-500">
-              <Button size="lg" className="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-semibold text-lg px-8 py-4 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl btn-press animate-pulse-glow">
-                Visit Our Location
-              </Button>
-              <Button 
-                size="lg" 
-                onClick={scrollToGames}
-                className="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-semibold text-lg px-8 py-4 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl btn-press"
-              >
-                Explore Games
-              </Button>
+            
+            <div className="text-6xl md:text-8xl font-bold">
+              <span className="bg-gradient-to-r from-lime-400 to-green-600 bg-clip-text text-transparent">
+                HAPPY2PLAY
+              </span>
             </div>
           </div>
         </div>
