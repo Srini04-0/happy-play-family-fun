@@ -1,36 +1,11 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Clock, Star, Users, Trophy, ShoppingBag } from "lucide-react";
 
 const Index = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [logoVisible, setLogoVisible] = useState(false);
-  const [logoPositioned, setLogoPositioned] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setScrollY(currentScrollY);
-      
-      // Show logo when user starts scrolling
-      if (currentScrollY > 50 && !logoVisible) {
-        setLogoVisible(true);
-      }
-      
-      // Position logo at top when scrolled enough
-      if (currentScrollY > 300 && !logoPositioned) {
-        setLogoPositioned(true);
-      } else if (currentScrollY <= 300 && logoPositioned) {
-        setLogoPositioned(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [logoVisible, logoPositioned]);
 
   const scrollToGames = () => {
     const gamesSection = document.getElementById('games');
@@ -41,18 +16,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Scroll-triggered Logo */}
-      <div className={`scroll-logo ${logoVisible ? 'visible' : ''} ${logoPositioned ? 'positioned' : ''}`}>
-        <div className="flex items-center space-x-3">
-          <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center shadow-lg">
-            <span className="text-white font-bold text-lg">H2P</span>
-          </div>
-          <span className="font-bold text-2xl text-gray-800 logo-glow">Happy 2 Play</span>
-        </div>
-      </div>
-
-      {/* Ethereal Semi-circle at bottom */}
-      <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-96 h-48 rounded-t-full ethereal-glow pointer-events-none z-10"></div>
 
       {/* Header */}
       <header className="bg-white shadow-lg sticky top-0 z-50 border-b backdrop-blur-sm bg-white/95">
@@ -69,16 +32,16 @@ const Index = () => {
                 About
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
+              <a href="#jobs" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+                Job Offer
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+              </a>
               <a href="#games" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
                 Games
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#products" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
                 Products
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <a href="#jobs" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
-                Jobs
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a href="#courses" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
@@ -190,7 +153,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Job Offers Section */}
+      {/* Job Offer Section */}
       <section id="jobs" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -326,86 +289,25 @@ const Index = () => {
       {/* Products Section */}
       <section id="products" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16 animate-fade-in-up">Our Premium Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
-            {/* H2P Logo Shoes */}
-            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-2 bg-white border-0 product-hover animate-fade-in-up animation-delay-100">
-              <div className="h-64 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-white/10"></div>
-                <div className="absolute top-2 right-2 w-6 h-6 bg-red-300 rounded-full animate-pulse opacity-70"></div>
-                <div className="relative z-10 text-center">
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-xl bg-white shadow-lg flex items-center justify-center transform hover:rotate-12 transition-transform duration-300">
-                    <div className="w-28 h-28 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center relative">
-                      <div className="text-white font-bold text-3xl animate-bounce">👟</div>
-                      <div className="absolute top-1 right-1 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center animate-spin">
-                        <span className="text-xs font-bold text-gray-800">H2P</span>
-                      </div>
-                    </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-8 animate-fade-in-up">Products</h2>
+            <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
+                <div className="text-center">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center">
+                    <ShoppingBag className="w-16 h-16 text-gray-500" />
                   </div>
-                  <Badge className="bg-white/20 text-white hover:bg-white/30 transition-colors duration-300">Premium</Badge>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <CardTitle className="text-xl mb-2 hover:text-red-500 transition-colors duration-300">H2P Shoes</CardTitle>
-                <CardDescription className="mb-4">Premium athletic footwear featuring the iconic Happy 2 Play logo design</CardDescription>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-red-500 animate-pulse">$29.99/mo</span>
-                  <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    Subscribe
+                  <h3 className="text-3xl font-bold text-gray-800 mb-4">Coming Soon!</h3>
+                  <p className="text-lg text-gray-600 mb-6">
+                    We're working on bringing you amazing Happy 2 Play products including branded shoes, 
+                    keychains, jackets, and more. Stay tuned for updates!
+                  </p>
+                  <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl">
+                    Notify Me When Available
                   </Button>
                 </div>
               </CardContent>
             </Card>
-
-            {/* Keychains */}
-            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-2 bg-white border-0 product-hover animate-fade-in-up animation-delay-200">
-              <div className="h-64 bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute top-3 left-3 w-4 h-4 bg-blue-300 rounded-full animate-ping opacity-60"></div>
-                <div className="text-center text-white">
-                  <div className="text-6xl mb-4 animate-bounce delay-100">🔑</div>
-                  <Badge className="bg-white/20 text-white hover:bg-white/30 transition-colors duration-300">Collectible</Badge>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <CardTitle className="text-xl mb-2 hover:text-blue-500 transition-colors duration-300">H2P Logo Keychains</CardTitle>
-                <CardDescription className="mb-4">Personalized keychains featuring the Happy 2 Play logo and unique designs</CardDescription>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-red-500 animate-pulse delay-100">$9.99/mo</span>
-                  <Button className="bg-red-500 hover:bg-red-600 text-white rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    Subscribe
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Jackets */}
-            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:rotate-2 bg-white border-0 product-hover animate-fade-in-up animation-delay-300">
-              <div className="h-64 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute bottom-3 right-3 w-5 h-5 bg-green-300 rounded-full animate-bounce opacity-70"></div>
-                <div className="text-center text-white">
-                  <div className="text-6xl mb-4 animate-pulse delay-200">🧥</div>
-                  <Badge className="bg-white/20 text-white hover:bg-white/30 transition-colors duration-300">Fashion</Badge>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <CardTitle className="text-xl mb-2 hover:text-green-500 transition-colors duration-300">H2P Custom Jackets</CardTitle>
-                <CardDescription className="mb-4">Stylish jackets featuring Happy 2 Play branding, perfect for every season</CardDescription>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-red-500 animate-pulse delay-200">$49.99/mo</span>
-                  <Button className="bg-red-500 hover:bg-red-600 text-white rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    Subscribe
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-          </div>
-          <div className="text-center mt-12 animate-fade-in-up animation-delay-400">
-            <p className="text-gray-600 mb-4">All products come with flexible subscription plans</p>
-            <Button size="lg" className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl">
-              View All Products
-            </Button>
           </div>
         </div>
       </section>
