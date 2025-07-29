@@ -30,40 +30,40 @@ const Index = () => {
     <div className="min-h-screen bg-background">
 
       {/* Header */}
-      <header className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 shadow-2xl sticky top-0 z-50 border-b border-purple-500/20 backdrop-blur-sm">
+      <header className="bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 shadow-lg sticky top-0 z-50 border-b border-green-200/50 backdrop-blur-sm">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 animate-fade-in-up">
-              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-12 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl"></div>
+              <div className="w-12 h-12 bg-gradient-to-br from-green-400 via-emerald-400 to-teal-400 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-12 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-xl"></div>
                 <Gamepad2 className="text-white w-6 h-6 relative z-10" />
               </div>
-              <span className="font-bold text-2xl bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">Happy2Play</span>
+              <span className="font-bold text-2xl bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">Happy2Play</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-white/80 hover:text-pink-400 transition-all duration-300 font-medium relative group">
+              <a href="#about" className="text-gray-700 hover:text-green-600 transition-all duration-300 font-medium relative group">
                 About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#jobs" className="text-white/80 hover:text-purple-400 transition-all duration-300 font-medium relative group">
+              <a href="#jobs" className="text-gray-700 hover:text-emerald-600 transition-all duration-300 font-medium relative group">
                 Job Offer
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#games" className="text-white/80 hover:text-blue-400 transition-all duration-300 font-medium relative group">
+              <a href="#games" className="text-gray-700 hover:text-teal-600 transition-all duration-300 font-medium relative group">
                 Games
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#products" className="text-white/80 hover:text-cyan-400 transition-all duration-300 font-medium relative group">
+              <a href="#products" className="text-gray-700 hover:text-cyan-600 transition-all duration-300 font-medium relative group">
                 Products
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-green-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#courses" className="text-white/80 hover:text-green-400 transition-all duration-300 font-medium relative group">
+              <a href="#courses" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
                 Courses
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#contact" className="text-white/80 hover:text-yellow-400 transition-all duration-300 font-medium relative group">
+              <a href="#contact" className="text-gray-700 hover:text-indigo-600 transition-all duration-300 font-medium relative group">
                 Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-green-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
           </div>
@@ -71,7 +71,7 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white py-32 relative overflow-hidden min-h-screen flex items-center">
+      <section className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800 py-32 relative overflow-hidden min-h-screen flex items-center">
         {/* Animated Background Particles */}
         {particles.map((particle) => (
           <div
@@ -82,7 +82,7 @@ const Index = () => {
               top: `${particle.y}%`,
               width: `${particle.size}px`,
               height: `${particle.size}px`,
-              backgroundColor: particle.color,
+              backgroundColor: ['#86efac', '#6ee7b7', '#5eead4', '#7dd3fc', '#a78bfa'][Math.floor(Math.random() * 5)],
               animationDelay: `${particle.id * 0.2}s`,
               animationDuration: `${2 + Math.random() * 3}s`
             }}
@@ -90,13 +90,13 @@ const Index = () => {
         ))}
         
         {/* Gaming Icons Floating */}
-        <div className="absolute top-20 left-20 text-pink-400 animate-bounce opacity-70">
+        <div className="absolute top-20 left-20 text-green-400 animate-bounce opacity-70">
           <Gamepad2 className="w-8 h-8" />
         </div>
-        <div className="absolute top-32 right-32 text-purple-400 animate-pulse opacity-60">
+        <div className="absolute top-32 right-32 text-emerald-400 animate-pulse opacity-60">
           <Zap className="w-10 h-10" />
         </div>
-        <div className="absolute bottom-40 left-32 text-blue-400 animate-ping opacity-50">
+        <div className="absolute bottom-40 left-32 text-teal-400 animate-ping opacity-50">
           <Heart className="w-6 h-6" />
         </div>
         <div className="absolute bottom-60 right-20 text-cyan-400 animate-bounce delay-500 opacity-80">
@@ -104,41 +104,34 @@ const Index = () => {
         </div>
         
         {/* Geometric Shapes */}
-        <div className="absolute top-1/4 left-10 w-20 h-20 border-4 border-pink-500/30 rotate-45 animate-spin-slow"></div>
-        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full animate-bounce delay-700"></div>
+        <div className="absolute top-1/4 left-10 w-20 h-20 border-4 border-green-300/30 rotate-45 animate-spin-slow"></div>
+        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-gradient-to-br from-emerald-300/20 to-teal-300/20 rounded-full animate-bounce delay-700"></div>
         
         <div className="container mx-auto px-4 text-center relative z-20">
           <div className="max-w-6xl mx-auto">
             {/* Main Title with Gaming Effect */}
             <div className="mb-8">
               <h1 className="text-6xl md:text-8xl font-black mb-4 leading-tight relative">
-                <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
+                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-pulse">
                   HAPPY
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-cyan-400 via-green-400 to-yellow-400 bg-clip-text text-transparent animate-pulse delay-300">
+                <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent animate-pulse delay-300">
                   2PLAY
                 </span>
                 {/* Glowing Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent blur-lg opacity-30 animate-pulse">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent blur-lg opacity-20 animate-pulse">
                   HAPPY<br />2PLAY
                 </div>
               </h1>
-              
-              {/* Gaming Subtitle */}
-              <div className="text-2xl md:text-3xl font-bold mb-2 text-white/90">
-                <span className="inline-block animate-bounce delay-100">🎮</span>
-                <span className="mx-4 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">LEVEL UP YOUR FUN</span>
-                <span className="inline-block animate-bounce delay-200">🎮</span>
-              </div>
             </div>
             
             {/* Power-up Style Description */}
-            <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-purple-500/30">
-              <p className="text-xl md:text-2xl mb-6 text-white/90 font-medium">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-green-200/50 shadow-lg">
+              <p className="text-xl md:text-2xl mb-6 text-gray-800 font-medium">
                 🌟 Ultimate Gaming Experience Awaits! 🌟
               </p>
-              <p className="text-lg mb-6 max-w-3xl mx-auto text-white/80">
+              <p className="text-lg mb-6 max-w-3xl mx-auto text-gray-700">
                 Enter a world where fun never ends! Challenge your friends, master epic games, 
                 and unlock achievements in the most exciting family entertainment center in town!
               </p>
@@ -146,23 +139,23 @@ const Index = () => {
               {/* Stats Display */}
               <div className="grid grid-cols-3 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">∞</div>
-                  <div className="text-sm text-white/70">Fun Levels</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">∞</div>
+                  <div className="text-sm text-gray-600">Fun Levels</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">10+</div>
-                  <div className="text-sm text-white/70">Epic Games</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">10+</div>
+                  <div className="text-sm text-gray-600">Epic Games</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">100%</div>
-                  <div className="text-sm text-white/70">Awesomeness</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">100%</div>
+                  <div className="text-sm text-gray-600">Awesomeness</div>
                 </div>
               </div>
             </div>
             
             {/* Gaming Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50 relative overflow-hidden group">
+              <Button size="lg" className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 relative overflow-hidden group">
                 <span className="relative z-10 flex items-center gap-2">
                   <Zap className="w-5 h-5" />
                   START PLAYING
@@ -172,7 +165,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 onClick={scrollToGames}
-                className="bg-gradient-to-r from-cyan-500 via-green-500 to-yellow-500 hover:from-cyan-600 hover:via-green-600 hover:to-yellow-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 relative overflow-hidden group"
+                className="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 hover:from-teal-600 hover:via-cyan-600 hover:to-blue-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-teal-500/50 relative overflow-hidden group"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <Gamepad2 className="w-5 h-5" />
