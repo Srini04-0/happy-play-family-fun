@@ -18,91 +18,96 @@ const Index = () => {
     <div className="min-h-screen bg-background">
 
       {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50 border-b backdrop-blur-sm bg-white/95">
-        <nav className="container mx-auto px-4 py-4">
+      <header className="bg-gradient-to-r from-pink-500 to-orange-500 sticky top-0 z-50">
+        <nav className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3 animate-fade-in-up">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-6">
-                <span className="text-white font-bold text-lg">H2P</span>
-              </div>
-              <span className="font-bold text-2xl text-gray-800 hover:text-red-500 transition-colors duration-300">Happy 2 Play</span>
+            <div className="flex items-center space-x-3">
+              <span className="font-bold text-2xl text-white">Happy 2 Play</span>
             </div>
-            <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#about" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#jobs" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#jobs" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 Job Offer
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#games" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#games" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 Games
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#products" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#products" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 Products
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#courses" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#courses" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 Courses
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#contact" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#contact" className="text-white/90 hover:text-white transition-colors duration-300 font-medium">
                 Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
               </a>
+              <div className="flex items-center space-x-3 ml-6">
+                <Button variant="ghost" className="text-white hover:bg-white/10">
+                  Log in
+                </Button>
+                <Button className="bg-white text-pink-500 hover:bg-white/90">
+                  Sign up
+                </Button>
+              </div>
             </div>
           </div>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="min-h-screen bg-gradient-to-br from-pink-500 via-red-500 to-orange-500 text-white relative overflow-hidden flex items-center">
+        {/* 3D Spheres similar to Jeton */}
+        <div className="absolute right-10 top-1/2 transform -translate-y-1/2">
+          <div className="relative">
+            <div className="w-80 h-80 bg-gradient-to-br from-white/20 to-white/5 rounded-full backdrop-blur-sm"></div>
+            <div className="absolute top-8 left-8 w-64 h-64 bg-gradient-to-br from-white/30 to-white/10 rounded-full backdrop-blur-sm"></div>
+            <div className="absolute top-16 left-16 w-48 h-48 bg-gradient-to-br from-white/40 to-white/15 rounded-full backdrop-blur-sm"></div>
+          </div>
+        </div>
         
-        {/* Floating animation elements */}
-        <div className="absolute top-10 left-10 w-4 h-4 bg-yellow-300 rounded-full animate-bounce opacity-70"></div>
-        <div className="absolute top-20 right-20 w-6 h-6 bg-white rounded-full animate-pulse opacity-50"></div>
-        <div className="absolute bottom-20 left-20 w-3 h-3 bg-red-300 rounded-full animate-ping opacity-60"></div>
-        <div className="absolute bottom-32 right-32 w-5 h-5 bg-orange-300 rounded-full animate-bounce delay-300 opacity-70"></div>
-        
-        {/* Moon Graphic */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10">
-          <div className="w-32 h-32 bg-gradient-to-br from-yellow-200 to-yellow-400 rounded-full moon-rise relative">
-            <div className="absolute inset-2 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-full">
-              <div className="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full opacity-70"></div>
-              <div className="absolute top-8 right-6 w-2 h-2 bg-yellow-400 rounded-full opacity-50"></div>
-              <div className="absolute bottom-6 left-8 w-4 h-4 bg-yellow-400 rounded-full opacity-60"></div>
-              <div className="absolute bottom-8 right-4 w-2 h-2 bg-yellow-400 rounded-full opacity-40"></div>
+        <div className="container mx-auto px-6 relative z-20">
+          <div className="max-w-2xl">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+              One app
+              <br />
+              for all needs
+            </h1>
+            <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-lg">
+              Single account for all your family entertainment and gaming needs.
+            </p>
+            
+            {/* App Store Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-16">
+              <Button size="lg" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium px-8 py-4 rounded-full">
+                📱 App Store
+              </Button>
+              <Button size="lg" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-medium px-8 py-4 rounded-full">
+                📱 Google Play
+              </Button>
+            </div>
+            
+            {/* Bottom Navigation Pills */}
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3">
+                <span className="w-2 h-2 bg-white rounded-full"></span>
+                <span className="text-white font-medium">Personal</span>
+              </div>
+              <div className="flex items-center space-x-2 text-white/70">
+                <span className="font-medium">Business</span>
+              </div>
+              <div className="flex items-center space-x-2 text-white/70">
+                <span className="font-medium">Company</span>
+              </div>
             </div>
           </div>
         </div>
         
-        <div className="container mx-auto px-4 text-center relative z-20">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-rise-glow">
-              <span className="text-yellow-300 drop-shadow-lg">Happy 2 Play</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up animation-delay-200">
-              Your Ultimate Family Entertainment Destination
-            </p>
-            <p className="text-lg mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-              Experience the joy of family fun with our exciting games, activities, and premium products. 
-              Where families come together to play, laugh, and create lasting memories!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-500">
-              <Button size="lg" className="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-semibold text-lg px-8 py-4 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl btn-press animate-pulse-glow">
-                Visit Our Location
-              </Button>
-              <Button 
-                size="lg" 
-                onClick={scrollToGames}
-                className="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-semibold text-lg px-8 py-4 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl btn-press"
-              >
-                Explore Games
-              </Button>
-            </div>
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-6">
+          <div className="flex items-center space-x-2 text-white/70">
+            <span className="text-sm">Scroll</span>
           </div>
         </div>
       </section>
