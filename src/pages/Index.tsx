@@ -1,11 +1,23 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Clock, Star, Users, Trophy, ShoppingBag } from "lucide-react";
+import { MapPin, Phone, Clock, Star, Users, Trophy, ShoppingBag, Gamepad2, Zap, Heart, Sparkles } from "lucide-react";
 
 const Index = () => {
+  const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, size: number, color: string}>>([]);
+
+  useEffect(() => {
+    const newParticles = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 2,
+      color: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'][Math.floor(Math.random() * 5)]
+    }));
+    setParticles(newParticles);
+  }, []);
 
   const scrollToGames = () => {
     const gamesSection = document.getElementById('games');
@@ -18,39 +30,40 @@ const Index = () => {
     <div className="min-h-screen bg-background">
 
       {/* Header */}
-      <header className="bg-white shadow-lg sticky top-0 z-50 border-b backdrop-blur-sm bg-white/95">
+      <header className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 shadow-2xl sticky top-0 z-50 border-b border-purple-500/20 backdrop-blur-sm">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 animate-fade-in-up">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-6">
-                <span className="text-white font-bold text-lg">H2P</span>
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-12 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl"></div>
+                <Gamepad2 className="text-white w-6 h-6 relative z-10" />
               </div>
-              <span className="font-bold text-2xl text-gray-800 hover:text-red-500 transition-colors duration-300">Happy 2 Play</span>
+              <span className="font-bold text-2xl bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">Happy2Play</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#about" className="text-white/80 hover:text-pink-400 transition-all duration-300 font-medium relative group">
                 About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#jobs" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#jobs" className="text-white/80 hover:text-purple-400 transition-all duration-300 font-medium relative group">
                 Job Offer
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#games" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#games" className="text-white/80 hover:text-blue-400 transition-all duration-300 font-medium relative group">
                 Games
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#products" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#products" className="text-white/80 hover:text-cyan-400 transition-all duration-300 font-medium relative group">
                 Products
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-green-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#courses" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#courses" className="text-white/80 hover:text-green-400 transition-all duration-300 font-medium relative group">
                 Courses
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-yellow-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#contact" className="text-gray-700 hover:text-red-500 transition-all duration-300 font-medium relative group">
+              <a href="#contact" className="text-white/80 hover:text-yellow-400 transition-all duration-300 font-medium relative group">
                 Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
           </div>
@@ -58,49 +71,114 @@ const Index = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white py-32 relative overflow-hidden min-h-screen flex items-center">
+        {/* Animated Background Particles */}
+        {particles.map((particle) => (
+          <div
+            key={particle.id}
+            className="absolute rounded-full animate-pulse"
+            style={{
+              left: `${particle.x}%`,
+              top: `${particle.y}%`,
+              width: `${particle.size}px`,
+              height: `${particle.size}px`,
+              backgroundColor: particle.color,
+              animationDelay: `${particle.id * 0.2}s`,
+              animationDuration: `${2 + Math.random() * 3}s`
+            }}
+          />
+        ))}
         
-        {/* Floating animation elements */}
-        <div className="absolute top-10 left-10 w-4 h-4 bg-yellow-300 rounded-full animate-bounce opacity-70"></div>
-        <div className="absolute top-20 right-20 w-6 h-6 bg-white rounded-full animate-pulse opacity-50"></div>
-        <div className="absolute bottom-20 left-20 w-3 h-3 bg-red-300 rounded-full animate-ping opacity-60"></div>
-        <div className="absolute bottom-32 right-32 w-5 h-5 bg-orange-300 rounded-full animate-bounce delay-300 opacity-70"></div>
-        
-        {/* Moon Graphic */}
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10">
-          <div className="w-32 h-32 bg-gradient-to-br from-yellow-200 to-yellow-400 rounded-full moon-rise relative">
-            <div className="absolute inset-2 bg-gradient-to-br from-yellow-100 to-yellow-300 rounded-full">
-              <div className="absolute top-4 left-4 w-3 h-3 bg-yellow-400 rounded-full opacity-70"></div>
-              <div className="absolute top-8 right-6 w-2 h-2 bg-yellow-400 rounded-full opacity-50"></div>
-              <div className="absolute bottom-6 left-8 w-4 h-4 bg-yellow-400 rounded-full opacity-60"></div>
-              <div className="absolute bottom-8 right-4 w-2 h-2 bg-yellow-400 rounded-full opacity-40"></div>
-            </div>
-          </div>
+        {/* Gaming Icons Floating */}
+        <div className="absolute top-20 left-20 text-pink-400 animate-bounce opacity-70">
+          <Gamepad2 className="w-8 h-8" />
+        </div>
+        <div className="absolute top-32 right-32 text-purple-400 animate-pulse opacity-60">
+          <Zap className="w-10 h-10" />
+        </div>
+        <div className="absolute bottom-40 left-32 text-blue-400 animate-ping opacity-50">
+          <Heart className="w-6 h-6" />
+        </div>
+        <div className="absolute bottom-60 right-20 text-cyan-400 animate-bounce delay-500 opacity-80">
+          <Sparkles className="w-7 h-7" />
         </div>
         
+        {/* Geometric Shapes */}
+        <div className="absolute top-1/4 left-10 w-20 h-20 border-4 border-pink-500/30 rotate-45 animate-spin-slow"></div>
+        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full animate-bounce delay-700"></div>
+        
         <div className="container mx-auto px-4 text-center relative z-20">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-rise-glow">
-              <span className="text-yellow-300 drop-shadow-lg">Happy 2 Play</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in-up animation-delay-200">
-              Your Ultimate Family Entertainment Destination
-            </p>
-            <p className="text-lg mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-300">
-              Experience the joy of family fun with our exciting games, activities, and premium products. 
-              Where families come together to play, laugh, and create lasting memories!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-500">
-              <Button size="lg" className="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-semibold text-lg px-8 py-4 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl btn-press animate-pulse-glow">
-                Visit Our Location
+          <div className="max-w-6xl mx-auto">
+            {/* Main Title with Gaming Effect */}
+            <div className="mb-8">
+              <h1 className="text-6xl md:text-8xl font-black mb-4 leading-tight relative">
+                <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
+                  HAPPY
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-cyan-400 via-green-400 to-yellow-400 bg-clip-text text-transparent animate-pulse delay-300">
+                  2PLAY
+                </span>
+                {/* Glowing Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent blur-lg opacity-30 animate-pulse">
+                  HAPPY<br />2PLAY
+                </div>
+              </h1>
+              
+              {/* Gaming Subtitle */}
+              <div className="text-2xl md:text-3xl font-bold mb-2 text-white/90">
+                <span className="inline-block animate-bounce delay-100">🎮</span>
+                <span className="mx-4 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">LEVEL UP YOUR FUN</span>
+                <span className="inline-block animate-bounce delay-200">🎮</span>
+              </div>
+            </div>
+            
+            {/* Power-up Style Description */}
+            <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-purple-500/30">
+              <p className="text-xl md:text-2xl mb-6 text-white/90 font-medium">
+                🌟 Ultimate Gaming Experience Awaits! 🌟
+              </p>
+              <p className="text-lg mb-6 max-w-3xl mx-auto text-white/80">
+                Enter a world where fun never ends! Challenge your friends, master epic games, 
+                and unlock achievements in the most exciting family entertainment center in town!
+              </p>
+              
+              {/* Stats Display */}
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">∞</div>
+                  <div className="text-sm text-white/70">Fun Levels</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">10+</div>
+                  <div className="text-sm text-white/70">Epic Games</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">100%</div>
+                  <div className="text-sm text-white/70">Awesomeness</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Gaming Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="lg" className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50 relative overflow-hidden group">
+                <span className="relative z-10 flex items-center gap-2">
+                  <Zap className="w-5 h-5" />
+                  START PLAYING
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
               <Button 
                 size="lg" 
                 onClick={scrollToGames}
-                className="bg-yellow-400 hover:bg-yellow-300 text-gray-800 font-semibold text-lg px-8 py-4 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl btn-press"
+                className="bg-gradient-to-r from-cyan-500 via-green-500 to-yellow-500 hover:from-cyan-600 hover:via-green-600 hover:to-yellow-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 relative overflow-hidden group"
               >
-                Explore Games
+                <span className="relative z-10 flex items-center gap-2">
+                  <Gamepad2 className="w-5 h-5" />
+                  EXPLORE GAMES
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </div>
           </div>
