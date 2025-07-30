@@ -409,49 +409,49 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-900 text-white relative overflow-hidden">
-        <div className="absolute top-10 left-10 w-4 h-4 bg-red-400 rounded-full animate-ping opacity-30"></div>
-        <div className="absolute bottom-20 right-20 w-6 h-6 bg-orange-400 rounded-full animate-bounce opacity-40"></div>
+      <section id="contact" className="py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800 relative overflow-hidden">
+        <div className="absolute top-10 left-10 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-6 h-6 bg-emerald-400 rounded-full animate-bounce opacity-40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16 animate-fade-in-up">Visit Our Location</h2>
+            <h2 className="text-4xl font-bold text-center mb-16 animate-fade-in-up bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">Visit Our Location</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="animate-fade-in-up animation-delay-200">
-                <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+                <h3 className="text-2xl font-bold mb-6 text-green-700">Get in Touch</h3>
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-red-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white">
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="font-semibold group-hover:text-red-400 transition-colors duration-300">Location</p>
-                      <p className="text-gray-300">123 Family Fun Street, Entertainment District</p>
+                      <p className="font-semibold group-hover:text-green-600 transition-colors duration-300">Location</p>
+                      <p className="text-gray-600">123 Family Fun Street, Entertainment District</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-red-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <div className="bg-gradient-to-r from-emerald-500 to-teal-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="font-semibold group-hover:text-red-400 transition-colors duration-300">Phone</p>
-                      <p className="text-gray-300">(555) 123-PLAY</p>
+                      <p className="font-semibold group-hover:text-emerald-600 transition-colors duration-300">Phone</p>
+                      <p className="text-gray-600">(555) 123-PLAY</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-red-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <div className="bg-gradient-to-r from-teal-500 to-green-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white">
                       <Clock className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="font-semibold group-hover:text-red-400 transition-colors duration-300">Hours</p>
-                      <p className="text-gray-300">Mon-Sun: 10AM - 10PM</p>
+                      <p className="font-semibold group-hover:text-teal-600 transition-colors duration-300">Hours</p>
+                      <p className="text-gray-600">Mon-Sun: 10AM - 10PM</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 group">
-                    <div className="bg-red-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                    <div className="bg-gradient-to-r from-green-400 to-emerald-400 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white">
                       <Star className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="font-semibold group-hover:text-red-400 transition-colors duration-300">Rating</p>
+                      <p className="font-semibold group-hover:text-green-600 transition-colors duration-300">Rating</p>
                       <div className="flex items-center space-x-1">
                         <div className="flex text-yellow-400">
                           <Star className="w-4 h-4 fill-current animate-pulse" />
@@ -460,19 +460,19 @@ const Index = () => {
                           <Star className="w-4 h-4 fill-current animate-pulse delay-300" />
                           <Star className="w-4 h-4 fill-current animate-pulse delay-500" />
                         </div>
-                        <span className="text-gray-300 text-sm">(4.9/5.0)</span>
+                        <span className="text-gray-600 text-sm">(4.9/5.0)</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="animate-fade-in-up animation-delay-300">
-                <h3 className="text-2xl font-bold mb-6">Ready to Play?</h3>
-                <p className="text-gray-300 mb-6">
+                <h3 className="text-2xl font-bold mb-6 text-green-700">Ready to Play?</h3>
+                <p className="text-gray-600 mb-6">
                   Come visit us for an unforgettable family experience! No reservations needed - just bring your 
                   family and get ready for hours of fun and excitement.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold w-full sm:w-auto transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <Button size="lg" className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold w-full sm:w-auto transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-green-500/50">
                   Get Directions
                 </Button>
               </div>
