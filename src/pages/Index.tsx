@@ -113,15 +113,11 @@ const Index = () => {
             <div className="mb-8">
               <h1 className="text-6xl md:text-8xl font-black mb-4 leading-tight relative">
                 <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-pulse">
-                  HAPPY
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent animate-pulse delay-300">
-                  2PLAY
+                  HAPPY2PLAY
                 </span>
                 {/* Glowing Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent blur-lg opacity-20 animate-pulse">
-                  HAPPY<br />2PLAY
+                  HAPPY2PLAY
                 </div>
               </h1>
             </div>
