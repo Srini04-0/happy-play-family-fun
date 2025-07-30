@@ -122,52 +122,59 @@ const Index = () => {
               </h1>
             </div>
             
-            {/* Power-up Style Description */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-green-200/50 shadow-lg">
-              <p className="text-xl md:text-2xl mb-6 text-gray-800 font-medium">
-                🌟 Ultimate Gaming Experience Awaits! 🌟
+            {/* Visit Our Location Call-to-Action */}
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 mb-12 border border-green-200/50 shadow-xl text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                🎯 Visit Our Amazing Location! 🎯
+              </h2>
+              <p className="text-lg md:text-xl mb-6 max-w-4xl mx-auto text-gray-700 leading-relaxed">
+                Experience the ultimate family fun destination! Our state-of-the-art entertainment center 
+                features exciting games, interactive challenges, and unforgettable experiences for all ages.
               </p>
-              <p className="text-lg mb-6 max-w-3xl mx-auto text-gray-700">
-                Enter a world where fun never ends! Challenge your friends, master epic games, 
-                and unlock achievements in the most exciting family entertainment center in town!
+              <p className="text-base md:text-lg mb-8 max-w-3xl mx-auto text-gray-600 leading-relaxed">
+                Come discover why families choose Happy2Play as their go-to destination for quality time, 
+                friendly competition, and creating lasting memories together.
               </p>
               
-              {/* Stats Display */}
-              <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">∞</div>
-                  <div className="text-sm text-gray-600">Fun Levels</div>
+              {/* Location Highlights */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="text-center p-4">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-2">15+</div>
+                  <div className="text-sm md:text-base text-gray-600 font-medium">Interactive Games</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">10+</div>
-                  <div className="text-sm text-gray-600">Epic Games</div>
+                <div className="text-center p-4">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">Safe</div>
+                  <div className="text-sm md:text-base text-gray-600 font-medium">Family Environment</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">100%</div>
-                  <div className="text-sm text-gray-600">Awesomeness</div>
+                <div className="text-center p-4">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-2">Open</div>
+                  <div className="text-sm md:text-base text-gray-600 font-medium">7 Days a Week</div>
                 </div>
               </div>
             </div>
             
-            {/* Gaming Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 relative overflow-hidden group">
-                <span className="relative z-10 flex items-center gap-2">
-                  <Zap className="w-5 h-5" />
-                  START PLAYING
+            {/* Call-to-Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white font-bold text-lg px-12 py-6 rounded-full transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 relative overflow-hidden group"
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  <MapPin className="w-6 h-6" />
+                  VISIT US TODAY
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
               <Button 
                 size="lg" 
                 onClick={scrollToGames}
-                className="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 hover:from-teal-600 hover:via-cyan-600 hover:to-blue-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-teal-500/50 relative overflow-hidden group"
+                variant="outline"
+                className="border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white font-bold text-lg px-12 py-6 rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                <span className="relative z-10 flex items-center gap-2">
-                  <Gamepad2 className="w-5 h-5" />
-                  EXPLORE GAMES
+                <span className="flex items-center gap-3">
+                  <Gamepad2 className="w-6 h-6" />
+                  VIEW OUR GAMES
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
             </div>
           </div>
