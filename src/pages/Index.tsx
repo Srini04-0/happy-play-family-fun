@@ -37,6 +37,10 @@ const Index = () => {
               <span className="font-bold text-2xl bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">HAPPY2PLAY</span>
             </div>
             <div className="hidden md:flex space-x-8">
+              <a href="#" className="text-gray-700 hover:text-green-600 transition-all duration-300 font-medium relative group">
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
               <a href="#about" className="text-gray-700 hover:text-green-600 transition-all duration-300 font-medium relative group">
                 About
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 transition-all duration-300 group-hover:w-full"></span>
