@@ -478,7 +478,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 border-t border-gray-700">
+      <footer className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800 py-8 border-t border-green-200/50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-3 mb-4 md:mb-0 animate-fade-in-up">
