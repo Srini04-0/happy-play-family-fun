@@ -27,7 +27,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
 
       {/* Header */}
       <header className="bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 shadow-lg sticky top-0 z-50 border-b border-green-200/50 backdrop-blur-sm">
