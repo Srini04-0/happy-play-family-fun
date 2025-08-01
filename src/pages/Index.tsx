@@ -481,13 +481,10 @@ const Index = () => {
       <footer className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800 py-8 border-t border-green-200/50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0 animate-fade-in-up">
-              <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center shadow-lg hover:scale-110 hover:rotate-12 transition-all duration-300">
-                <span className="text-white font-bold">H2P</span>
-              </div>
-              <span className="font-bold text-xl hover:text-red-400 transition-colors duration-300">Happy 2 Play</span>
+            <div className="animate-fade-in-up">
+              <span className="font-bold text-xl bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">HAPPY2PLAY</span>
             </div>
-            <p className="text-gray-400 text-center md:text-right animate-fade-in-up animation-delay-200">© 2025 Happy 2 Play. All rights reserved. Creating family memories since day one.</p>
+            <p className="text-gray-600 text-center md:text-right animate-fade-in-up animation-delay-200">© 2025 Happy 2 Play. All rights reserved. Creating family memories since day one.</p>
           </div>
         </div>
       </footer>
