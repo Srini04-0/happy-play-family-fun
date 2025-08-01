@@ -33,11 +33,7 @@ const Index = () => {
       <header className="bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 shadow-lg sticky top-0 z-50 border-b border-green-200/50 backdrop-blur-sm">
         <nav className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3 animate-fade-in-up">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-400 via-emerald-400 to-teal-400 rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:rotate-12 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-xl"></div>
-                <Gamepad2 className="text-white w-6 h-6 relative z-10" />
-              </div>
+            <div className="animate-fade-in-up">
               <span className="font-bold text-2xl bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">HAPPY2PLAY</span>
             </div>
             <div className="hidden md:flex space-x-8">
