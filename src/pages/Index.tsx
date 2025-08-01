@@ -107,17 +107,19 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             {/* Main Title with Gaming Effect */}
             <div className="mb-8">
-              <h1 className="text-8xl md:text-9xl font-black mb-6 leading-tight relative">
-                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-pulse">
+              <h1 className="text-6xl md:text-7xl font-black mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text text-transparent animate-pulse">
+                  Welcome
+                </span>
+              </h1>
+              <h2 className="text-7xl md:text-8xl font-black mb-4 leading-tight relative">
+                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-bounce">
                   HAPPY2PLAY
                 </span>
                 {/* Glowing Effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent blur-lg opacity-20 animate-pulse">
                   HAPPY2PLAY
                 </div>
-              </h1>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
-                Welcome
               </h2>
             </div>
             
