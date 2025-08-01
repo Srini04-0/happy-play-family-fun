@@ -117,7 +117,7 @@ const Index = () => {
                 </div>
               </h1>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
-                Welcome to the Ultimate Family Adventure!
+                Welcome
               </h2>
             </div>
             
