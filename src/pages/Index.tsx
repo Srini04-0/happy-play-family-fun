@@ -111,17 +111,17 @@ const Index = () => {
           <div className="max-w-6xl mx-auto">
             {/* Main Title with Gaming Effect */}
             <div className="mb-8">
-              <h1 className="text-6xl md:text-7xl font-black mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent animate-pulse">
                   Welcome
                 </span>
               </h1>
-              <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-4 leading-tight relative">
+              <h2 className="text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[14rem] font-black mb-4 leading-tight relative">
                 <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-bounce">
                   HAPPY2PLAY
                 </span>
-                {/* Glowing Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent blur-lg opacity-20 animate-pulse">
+                {/* Very Light and Slow Glowing Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent blur-xl opacity-10 animate-[pulse_4s_ease-in-out_infinite]">
                   HAPPY2PLAY
                 </div>
               </h2>
