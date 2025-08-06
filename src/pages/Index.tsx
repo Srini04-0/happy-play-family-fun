@@ -116,7 +116,7 @@ const Index = () => {
                   Welcome
                 </span>
               </h1>
-              <h2 className="text-8xl md:text-9xl font-black mb-4 leading-tight relative">
+              <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-4 leading-tight relative">
                 <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-bounce">
                   HAPPY2PLAY
                 </span>
