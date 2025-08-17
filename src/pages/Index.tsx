@@ -182,49 +182,41 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center animate-fade-in-up">About Happy 2 Play</h2>
-            <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500">
-              <CardContent className="p-8 md:p-12">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  {/* Left Side - About Text */}
-                  <div className="animate-fade-in-up">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-6">About Us</h3>
-                    <p className="text-lg text-gray-700 mb-6">
-                      Happy 2 Play is a premier family entertainment center dedicated to bringing families together 
-                      through fun, interactive experiences. Our physical location offers a variety of exciting games 
-                      and activities designed for all ages.
-                    </p>
-                    <p className="text-lg text-gray-700">
-                      We believe that family time is precious, and we've created a space where parents and children 
-                      can bond, compete, and create unforgettable memories together. From thrilling physical challenges 
-                      to friendly competitions, we have something for everyone.
-                    </p>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-8 animate-fade-in-up">About Happy 2 Play</h2>
+            <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
+                <p className="text-lg text-gray-700 mb-6">
+                  Happy 2 Play is a premier family entertainment center dedicated to bringing families together 
+                  through fun, interactive experiences. Our physical location offers a variety of exciting games 
+                  and activities designed for all ages.
+                </p>
+                <p className="text-lg text-gray-700 mb-8">
+                  We believe that family time is precious, and we've created a space where parents and children 
+                  can bond, compete, and create unforgettable memories together. From thrilling physical challenges 
+                  to friendly competitions, we have something for everyone.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                  <div className="text-center group animate-fade-in-up animation-delay-300">
+                    <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float">
+                      <Users className="text-red-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-red-500 transition-colors duration-300">Family Games</h3>
+                    <p className="text-gray-600">Interactive games for all family members</p>
                   </div>
-                  
-                  {/* Right Side - Logos */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-8">
-                    <div className="text-center group animate-fade-in-up animation-delay-300">
-                      <div className="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float">
-                        <Users className="text-red-500 w-10 h-10 group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <h3 className="font-semibold text-lg mb-2 group-hover:text-red-500 transition-colors duration-300">Family Games</h3>
-                      <p className="text-gray-600 text-sm">Interactive games for all family members</p>
+                  <div className="text-center group animate-fade-in-up animation-delay-400">
+                    <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float animation-delay-200">
+                      <Trophy className="text-blue-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
                     </div>
-                    <div className="text-center group animate-fade-in-up animation-delay-400">
-                      <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float animation-delay-200">
-                        <Trophy className="text-blue-500 w-10 h-10 group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <h3 className="font-semibold text-lg mb-2 group-hover:text-blue-500 transition-colors duration-300">Tournaments</h3>
-                      <p className="text-gray-600 text-sm">Regular family tournaments and competitions</p>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-blue-500 transition-colors duration-300">Tournaments</h3>
+                    <p className="text-gray-600">Regular family tournaments and competitions</p>
+                  </div>
+                  <div className="text-center group animate-fade-in-up animation-delay-500">
+                    <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float animation-delay-300">
+                      <ShoppingBag className="text-green-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
                     </div>
-                    <div className="text-center group animate-fade-in-up animation-delay-500">
-                      <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float animation-delay-300">
-                        <ShoppingBag className="text-green-500 w-10 h-10 group-hover:scale-110 transition-transform duration-300" />
-                      </div>
-                      <h3 className="font-semibold text-lg mb-2 group-hover:text-green-500 transition-colors duration-300">Products</h3>
-                      <p className="text-gray-600 text-sm">Premium products with subscription options</p>
-                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-green-500 transition-colors duration-300">Products</h3>
+                    <p className="text-gray-600">Premium products with subscription options</p>
                   </div>
                 </div>
               </CardContent>
