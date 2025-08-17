@@ -1,15 +1,20 @@
-
 import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Clock, Star, Users, Trophy, ShoppingBag, Gamepad2, Zap, Heart, Sparkles } from "lucide-react";
-
 const Index = () => {
-  const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, size: number, color: string}>>([]);
-
+  const [particles, setParticles] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    size: number;
+    color: string;
+  }>>([]);
   useEffect(() => {
-    const newParticles = Array.from({ length: 20 }, (_, i) => ({
+    const newParticles = Array.from({
+      length: 20
+    }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -18,16 +23,15 @@ const Index = () => {
     }));
     setParticles(newParticles);
   }, []);
-
   const scrollToGames = () => {
     const gamesSection = document.getElementById('games');
     if (gamesSection) {
-      gamesSection.scrollIntoView({ behavior: 'smooth' });
+      gamesSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
+  return <div className="min-h-screen bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
 
       {/* Header */}
       <header className="bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 shadow-lg sticky top-0 z-50 border-b border-green-200/50 backdrop-blur-sm">
@@ -73,21 +77,15 @@ const Index = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800 py-32 relative overflow-hidden min-h-screen flex items-center">
         {/* Animated Background Particles */}
-        {particles.map((particle) => (
-          <div
-            key={particle.id}
-            className="absolute rounded-full animate-pulse"
-            style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              backgroundColor: ['#86efac', '#6ee7b7', '#5eead4', '#7dd3fc', '#a78bfa'][Math.floor(Math.random() * 5)],
-              animationDelay: `${particle.id * 0.2}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
-            }}
-          />
-        ))}
+        {particles.map(particle => <div key={particle.id} className="absolute rounded-full animate-pulse" style={{
+        left: `${particle.x}%`,
+        top: `${particle.y}%`,
+        width: `${particle.size}px`,
+        height: `${particle.size}px`,
+        backgroundColor: ['#86efac', '#6ee7b7', '#5eead4', '#7dd3fc', '#a78bfa'][Math.floor(Math.random() * 5)],
+        animationDelay: `${particle.id * 0.2}s`,
+        animationDuration: `${2 + Math.random() * 3}s`
+      }} />)}
         
         {/* Gaming Icons Floating */}
         <div className="absolute top-20 left-20 text-green-400 animate-bounce opacity-70">
@@ -163,11 +161,7 @@ const Index = () => {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
-              <Button 
-                size="lg" 
-                onClick={scrollToGames}
-                className="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 hover:from-teal-600 hover:via-cyan-600 hover:to-blue-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-teal-500/50 relative overflow-hidden group"
-              >
+              <Button size="lg" onClick={scrollToGames} className="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 hover:from-teal-600 hover:via-cyan-600 hover:to-blue-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-teal-500/50 relative overflow-hidden group">
                 <span className="relative z-10 flex items-center gap-2">
                   <Gamepad2 className="w-5 h-5" />
                   EXPLORE GAMES
@@ -183,7 +177,7 @@ const Index = () => {
       <section id="about" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8 animate-fade-in-up">About Happy 2 Play</h2>
+            <h2 className="mb-8 animate-fade-in-up text-left font-medium text-sky-500 text-6xl">About Us</h2>
             <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
                 <p className="text-lg text-gray-700 mb-6">
@@ -497,8 +491,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
