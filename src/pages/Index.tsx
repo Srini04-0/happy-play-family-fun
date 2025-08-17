@@ -180,12 +180,8 @@ const Index = () => {
             <h2 className="mb-8 animate-fade-in-up text-left font-medium text-sky-500 text-6xl">About Us</h2>
             <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
-                <p className="text-lg text-gray-700 mb-6">
-                  Happy 2 Play is a premier family entertainment center dedicated to bringing families together 
-                  through fun, interactive experiences. Our physical location offers a variety of exciting games 
-                  and activities designed for all ages.
-                </p>
-                <p className="text-lg text-gray-700 mb-8">
+                <p className="text-gray-700 mb-6 text-left text-lg font-light">Happy2Play is a premier family entertainment center dedicated to bringing families together through fun, interactive experiences. Our physical location offers a variety of exciting games and activities designed for all ages.</p>
+                <p className="text-lg text-gray-700 mb-8 text-left font-light">
                   We believe that family time is precious, and we've created a space where parents and children 
                   can bond, compete, and create unforgettable memories together. From thrilling physical challenges 
                   to friendly competitions, we have something for everyone.
@@ -223,7 +219,7 @@ const Index = () => {
       <section id="jobs" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8 animate-fade-in-up">Job Offers</h2>
+            <h2 className="mb-8 animate-fade-in-up text-left text-5xl text-sky-500 font-normal">Job Offer's</h2>
             <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
                 <p className="text-lg text-gray-700 mb-6">
