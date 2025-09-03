@@ -177,7 +177,7 @@ const Index = () => {
       <section id="about" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="mb-8 animate-fade-in-up text-left font-medium text-sky-500 text-6xl">About Us</h2>
+            <h2 className="mb-8 animate-fade-in-up text-left font-medium text-6xl text-lime-950">About Us</h2>
             <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
                 <p className="text-gray-700 mb-6 text-left text-lg font-light">Happy2Play is a premier family entertainment center dedicated to bringing families together through fun, interactive experiences. Our physical location offers a variety of exciting games and activities designed for all ages.</p>
@@ -429,7 +429,7 @@ const Index = () => {
                     </div>
                     <div>
                       <p className="font-semibold group-hover:text-emerald-600 transition-colors duration-300">Phone</p>
-                      <p className="text-gray-600">(555) 123-PLAY</p>
+                      <p className="text-gray-600">+91 74067 98522</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-4 group">
@@ -455,7 +455,7 @@ const Index = () => {
                           <Star className="w-4 h-4 fill-current animate-pulse delay-300" />
                           <Star className="w-4 h-4 fill-current animate-pulse delay-500" />
                         </div>
-                        <span className="text-gray-600 text-sm">(4.9/5.0)</span>
+                        <span className="text-gray-600 text-sm">(4.0/5.0)</span>
                       </div>
                     </div>
                   </div>
