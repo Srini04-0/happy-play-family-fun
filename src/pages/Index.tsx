@@ -219,7 +219,7 @@ const Index = () => {
       <section id="jobs" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="mb-8 animate-fade-in-up text-left text-5xl text-sky-500 font-normal">Job Offer's</h2>
+            <h2 className="mb-8 animate-fade-in-up text-left text-5xl font-normal text-lime-950">Job Offer's</h2>
             <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
               <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
                 <p className="text-lg text-gray-700 mb-6">
