@@ -52,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				gaming: {
+					green: 'hsl(var(--gaming-green))',
+					'green-glow': 'hsl(var(--gaming-green-glow))',
+					dark: 'hsl(var(--gaming-dark))',
+					card: 'hsl(var(--gaming-card))',
+					border: 'hsl(var(--gaming-border))',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -89,7 +96,9 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'spin-slow': 'spin 6s linear infinite'
+				'spin-slow': 'spin 6s linear infinite',
+				'gaming-glow': 'gaming-glow 4s ease-in-out infinite',
+				'card-glow': 'card-glow 2s ease-in-out infinite',
 			}
 		}
 	},
