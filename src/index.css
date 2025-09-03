@@ -87,6 +87,11 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
+
+  /* Apply Orbitron font to all headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', monospace;
+  }
 }
 
 /* Custom animations for Happy 2 Play */
