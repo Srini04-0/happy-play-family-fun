@@ -1,365 +1,492 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Gamepad2, Zap, Users, Trophy, Clock, TrendingUp, GraduationCap, Heart, Star, Award } from "lucide-react";
-
+import { MapPin, Phone, Clock, Star, Users, Trophy, ShoppingBag, Gamepad2, Zap, Heart, Sparkles } from "lucide-react";
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-gaming-dark text-foreground">
+  const [particles, setParticles] = useState<Array<{
+    id: number;
+    x: number;
+    y: number;
+    size: number;
+    color: string;
+  }>>([]);
+  useEffect(() => {
+    const newParticles = Array.from({
+      length: 20
+    }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 2,
+      color: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'][Math.floor(Math.random() * 5)]
+    }));
+    setParticles(newParticles);
+  }, []);
+  const scrollToGames = () => {
+    const gamesSection = document.getElementById('games');
+    if (gamesSection) {
+      gamesSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+  return <div className="min-h-screen bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
+
+      {/* Header */}
+      <header className="bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 shadow-lg sticky top-0 z-50 border-b border-green-200/50 backdrop-blur-sm">
+        <nav className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="animate-fade-in-up">
+              <span className="font-bold text-2xl bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">HAPPY2PLAY</span>
+            </div>
+            <div className="hidden md:flex space-x-8">
+              <a href="#" className="text-gray-700 hover:text-green-600 transition-all duration-300 font-medium relative group">
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#about" className="text-gray-700 hover:text-green-600 transition-all duration-300 font-medium relative group">
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#jobs" className="text-gray-700 hover:text-emerald-600 transition-all duration-300 font-medium relative group">
+                Job Offer
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-teal-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#games" className="text-gray-700 hover:text-teal-600 transition-all duration-300 font-medium relative group">
+                Games
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#products" className="text-gray-700 hover:text-cyan-600 transition-all duration-300 font-medium relative group">
+                Products
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#courses" className="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium relative group">
+                Courses
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#contact" className="text-gray-700 hover:text-indigo-600 transition-all duration-300 font-medium relative group">
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-green-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
       {/* Hero Section */}
-      <section className="min-h-screen relative overflow-hidden flex items-center justify-center px-4">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-gaming-green/20 via-transparent to-gaming-green/10" />
+      <section className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800 py-32 relative overflow-hidden min-h-screen flex items-center">
+        {/* Animated Background Particles */}
+        {particles.map(particle => <div key={particle.id} className="absolute rounded-full animate-pulse" style={{
+        left: `${particle.x}%`,
+        top: `${particle.y}%`,
+        width: `${particle.size}px`,
+        height: `${particle.size}px`,
+        backgroundColor: ['#86efac', '#6ee7b7', '#5eead4', '#7dd3fc', '#a78bfa'][Math.floor(Math.random() * 5)],
+        animationDelay: `${particle.id * 0.2}s`,
+        animationDuration: `${2 + Math.random() * 3}s`
+      }} />)}
+        
+        {/* Gaming Icons Floating */}
+        <div className="absolute top-20 left-20 text-green-400 animate-bounce opacity-70">
+          <Gamepad2 className="w-8 h-8" />
+        </div>
+        <div className="absolute top-32 right-32 text-emerald-400 animate-pulse opacity-60">
+          <Zap className="w-10 h-10" />
+        </div>
+        <div className="absolute bottom-40 left-32 text-teal-400 animate-ping opacity-50">
+          <Heart className="w-6 h-6" />
+        </div>
+        <div className="absolute bottom-60 right-20 text-cyan-400 animate-bounce delay-500 opacity-80">
+          <Sparkles className="w-7 h-7" />
         </div>
         
-        <div className="text-center z-10 max-w-6xl mx-auto">
-          <h1 
-            className="text-8xl sm:text-9xl md:text-[12rem] lg:text-[16rem] xl:text-[20rem] font-black tracking-tight leading-none mb-8"
-            style={{ fontFamily: 'Orbitron, monospace' }}
-          >
-            <span className="text-white animate-gaming-glow">HAPPY2PLAY</span>
-          </h1>
-          
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 px-4" style={{ fontFamily: 'Exo 2, sans-serif' }}>
-            Enter a world where fun never ends! Challenge your friends, master epic games, and unlock achievements in the most exciting family entertainment center in town!
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-gaming-green hover:bg-gaming-green-glow text-white font-bold text-lg px-10 py-4 rounded-lg transition-all duration-300">
-              <Zap className="w-5 h-5 mr-2" />
-              Start Playing
-            </Button>
-            <Button size="lg" variant="outline" className="border-gaming-green text-gaming-green hover:bg-gaming-green hover:text-white font-bold text-lg px-10 py-4 rounded-lg transition-all duration-300">
-              <Gamepad2 className="w-5 h-5 mr-2" />
-              Explore Games
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-gaming-card border-gaming-border hover:border-gaming-green transition-all duration-300 animate-card-glow">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl font-black text-gaming-green mb-2" style={{ fontFamily: 'Orbitron, monospace' }}>∞</div>
-                <h3 className="text-2xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Fun Levels</h3>
-                <p className="text-gray-400">Unlimited excitement</p>
-              </CardContent>
-            </Card>
+        {/* Geometric Shapes */}
+        <div className="absolute top-1/4 left-10 w-20 h-20 border-4 border-green-300/30 rotate-45 animate-spin-slow"></div>
+        <div className="absolute bottom-1/4 right-10 w-16 h-16 bg-gradient-to-br from-emerald-300/20 to-teal-300/20 rounded-full animate-bounce delay-700"></div>
+        
+        <div className="container mx-auto px-4 text-center relative z-20">
+          <div className="max-w-6xl mx-auto">
+            {/* Main Title with Gaming Effect */}
+            <div className="mb-8">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 bg-clip-text text-transparent animate-pulse">
+                  Welcome
+                </span>
+              </h1>
+              <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black mb-4 leading-tight relative">
+                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-bounce">
+                  HAPPY2PLAY
+                </span>
+                {/* Very Light and Slow Glowing Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent blur-xl opacity-10 animate-[pulse_4s_ease-in-out_infinite]">
+                  HAPPY2PLAY
+                </div>
+              </h2>
+            </div>
             
-            <Card className="bg-gaming-card border-gaming-border hover:border-gaming-green transition-all duration-300 animate-card-glow">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl font-black text-gaming-green mb-2" style={{ fontFamily: 'Orbitron, monospace' }}>10+</div>
-                <h3 className="text-2xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Epic Games</h3>
-                <p className="text-gray-400">Thrilling adventures</p>
-              </CardContent>
-            </Card>
+            {/* Power-up Style Description */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-green-200/50 shadow-lg">
+              <p className="text-xl md:text-2xl mb-6 text-gray-800 font-medium">
+                🌟 Ultimate Gaming Experience Awaits! 🌟
+              </p>
+              <p className="text-lg mb-6 max-w-3xl mx-auto text-gray-700">
+                Enter a world where fun never ends! Challenge your friends, master epic games, 
+                and unlock achievements in the most exciting family entertainment center in town!
+              </p>
+              
+              {/* Stats Display */}
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">∞</div>
+                  <div className="text-sm text-gray-600">Fun Levels</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">10+</div>
+                  <div className="text-sm text-gray-600">Epic Games</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">100%</div>
+                  <div className="text-sm text-gray-600">Awesomeness</div>
+                </div>
+              </div>
+            </div>
             
-            <Card className="bg-gaming-card border-gaming-border hover:border-gaming-green transition-all duration-300 animate-card-glow">
-              <CardContent className="p-8 text-center">
-                <div className="text-6xl font-black text-gaming-green mb-2" style={{ fontFamily: 'Orbitron, monospace' }}>100%</div>
-                <h3 className="text-2xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Awesomeness</h3>
-                <p className="text-gray-400">Pure entertainment</p>
-              </CardContent>
-            </Card>
+            {/* Gaming Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="lg" className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-green-500/50 relative overflow-hidden group">
+                <span className="relative z-10 flex items-center gap-2">
+                  <Zap className="w-5 h-5" />
+                  START PLAYING
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </Button>
+              <Button size="lg" onClick={scrollToGames} className="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 hover:from-teal-600 hover:via-cyan-600 hover:to-blue-600 text-white font-bold text-lg px-10 py-5 rounded-full transform hover:scale-110 transition-all duration-300 shadow-2xl hover:shadow-teal-500/50 relative overflow-hidden group">
+                <span className="relative z-10 flex items-center gap-2">
+                  <Gamepad2 className="w-5 h-5" />
+                  EXPLORE GAMES
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto items-center">
-            {/* About Us Content */}
-            <div>
-              <h2 className="text-5xl font-black text-white mb-8" style={{ fontFamily: 'Orbitron, monospace' }}>About Us</h2>
-              <div className="space-y-6 text-gray-300" style={{ fontFamily: 'Exo 2, sans-serif' }}>
-                <p className="text-lg leading-relaxed">
-                  Welcome to HAPPY2PLAY, where cutting-edge entertainment meets family fun! We're not just a gaming center – we're a lifestyle destination that brings people together through the power of play.
+      <section id="about" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="mb-8 animate-fade-in-up text-left font-medium text-6xl text-lime-950">About Us</h2>
+            <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200 rounded-md">
+                <p className="mb-6 text-left text-lg text-zinc-950 font-normal">About Us We are shaping the future of events, lifestyle, and opportunities through one Dynamic platform. Our Startup Brings Together sports Activities one on one with companies schools  colleges Events Birthday party celebrations, online courses, job opportunities, Apparel solutions, And food festivals – Making us a one-stop hub for both individuals and businesses. We believe in blending celebration, learning, career growth, and lifestyle experiences into a seamless ecosystem. We Are Hosting an Event, find a job, upskill, showcase talent, or enjoy a Festival, our Platform Is Designed for you. </p>
+                <p className="text-lg mb-8 text-gray-950 text-left font-normal">
+                  We believe that family time is precious, and we've created a space where parents and children 
+                  can bond, compete, and create unforgettable memories together. From thrilling physical challenges 
+                  to friendly competitions, we have something for everyone.
                 </p>
-                <p className="text-lg leading-relaxed">
-                  Our state-of-the-art facility combines thrilling games, competitive sports, exciting events, and memorable experiences. Whether you're looking for an adrenaline rush or quality family time, we've got something special for everyone.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  From epic adventure challenges to skill-building activities, we create an environment where families bond, friends compete, and unforgettable memories are made every single day.
-                </p>
-              </div>
-            </div>
-
-            {/* Gaming Excellence Card */}
-            <div className="flex flex-col items-center">
-              <div className="w-32 h-32 bg-gaming-card border-2 border-gaming-green rounded-full flex items-center justify-center mb-6 animate-card-glow">
-                <Gamepad2 className="w-16 h-16 text-gaming-green" />
-              </div>
-              <h3 className="text-3xl font-bold text-gaming-green mb-4" style={{ fontFamily: 'Orbitron, monospace' }}>Gaming Excellence</h3>
-              <p className="text-gray-300 text-center text-lg" style={{ fontFamily: 'Exo 2, sans-serif' }}>
-                Experience the future of entertainment with our cutting-edge gaming technology and immersive environments designed to thrill and inspire.
-              </p>
-            </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                  <div className="text-center group animate-fade-in-up animation-delay-300">
+                    <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float">
+                      <Users className="text-red-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-red-500 transition-colors duration-300">Family Games</h3>
+                    <p className="text-gray-600">Interactive games for all family members</p>
+                  </div>
+                  <div className="text-center group animate-fade-in-up animation-delay-400">
+                    <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float animation-delay-200">
+                      <Trophy className="text-blue-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-blue-500 transition-colors duration-300">Tournaments</h3>
+                    <p className="text-gray-600">Regular family tournaments and competitions</p>
+                  </div>
+                  <div className="text-center group animate-fade-in-up animation-delay-500">
+                    <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float animation-delay-300">
+                      <ShoppingBag className="text-green-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-green-500 transition-colors duration-300">Products</h3>
+                    <p className="text-gray-600">Premium products with subscription options</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Epic Games Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-5xl font-black text-center text-white mb-4" style={{ fontFamily: 'Orbitron, monospace' }}>Epic Games</h2>
-          <p className="text-xl text-gray-300 text-center mb-16 max-w-4xl mx-auto" style={{ fontFamily: 'Exo 2, sans-serif' }}>
-            Choose your adventure and dive into worlds of excitement, challenge, and fun!
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Adventure Land Boat Race */}
-            <Card className="bg-gaming-card border-gaming-border hover:border-gaming-green transition-all duration-300 group">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-gaming-green/30 transition-colors">
-                  <Zap className="w-8 h-8 text-gaming-green" />
+      {/* Job Offer Section */}
+      <section id="jobs" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="mb-8 animate-fade-in-up text-left text-5xl font-normal text-lime-950">Job Offer's</h2>
+            <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
+                <p className="text-lg text-gray-700 mb-6">
+                  Happy 2 Play offers exciting job opportunities for students who are looking for flexible work 
+                  arrangements that fit around their educational needs. Whether you're taking a break from studies, 
+                  pursuing part-time education, or just starting your college journey, we have positions for you.
+                </p>
+                <p className="mb-8 text-lime-950 text-lg">
+                  We understand that not everyone follows the traditional full-time study path. That's why we've 
+                  created job opportunities specifically designed for students who have dropped out, are in their 
+                  first or second year of college, or need flexible schedules to balance work and education.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                  <div className="text-center group animate-fade-in-up animation-delay-300">
+                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float">
+                      <Clock className="text-purple-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-purple-500 transition-colors duration-300">Flexible Hours</h3>
+                    <p className="text-gray-600">Part-time positions with schedules that work around your studies and personal commitments</p>
+                  </div>
+                  <div className="text-center group animate-fade-in-up animation-delay-400">
+                    <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 animate-float animation-delay-200">
+                      <Star className="text-orange-500 w-8 h-8 group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-orange-500 transition-colors duration-300">Growth Opportunities</h3>
+                    <p className="text-gray-600">Learn valuable skills in customer service, entertainment management, and team leadership</p>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Adventure Land Boat Race</h3>
-                <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 mb-4">Medium</Badge>
-                <p className="text-gray-300 mb-6">Navigate through thrilling water challenges and race against time!</p>
-                <Button className="w-full bg-gaming-green hover:bg-gaming-green-glow text-white">Play Now</Button>
+                <div className="mt-8">
+                  <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl">
+                    Apply Now
+                  </Button>
+                </div>
               </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Games Section */}
+      <section id="games" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16 animate-fade-in-up">Our Exciting Games</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Land Boat Race */}
+            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 bg-gradient-to-br from-blue-500 to-blue-600 text-white border-0 game-card-hover animate-fade-in-up animation-delay-100">
+              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-700 relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute top-2 right-2 w-8 h-8 bg-blue-300 rounded-full animate-bounce opacity-70"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <Badge className="bg-blue-700/50 text-white mb-2 hover:bg-blue-600/50 transition-colors duration-300">Adventure</Badge>
+                  <h3 className="text-xl font-bold mb-2 transform transition-transform duration-300 group-hover:scale-105">Land Boat Race</h3>
+                  <p className="text-sm opacity-90">Navigate your land boat through exciting challenges</p>
+                </div>
+              </div>
             </Card>
 
             {/* Dragon Walk */}
-            <Card className="bg-gaming-card border-gaming-border hover:border-gaming-green transition-all duration-300 group">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-gaming-green/30 transition-colors">
-                  <Zap className="w-8 h-8 text-gaming-green" />
+            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 bg-gradient-to-br from-red-500 to-red-600 text-white border-0 game-card-hover animate-fade-in-up animation-delay-200">
+              <div className="h-48 bg-gradient-to-br from-red-400 to-red-700 relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute top-4 left-4 w-6 h-6 bg-red-300 rounded-full animate-ping opacity-60"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <Badge className="bg-red-700/50 text-white mb-2 hover:bg-red-600/50 transition-colors duration-300">Balance</Badge>
+                  <h3 className="text-xl font-bold mb-2 transform transition-transform duration-300 group-hover:scale-105">Dragon Walk</h3>
+                  <p className="text-sm opacity-90">Test your balance and coordination skills</p>
                 </div>
-                <h3 className="text-2xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Dragon Walk</h3>
-                <Badge className="bg-red-500/20 text-red-400 border-red-500/30 mb-4">Hard</Badge>
-                <p className="text-gray-300 mb-6">Test your balance and courage on our legendary dragon path.</p>
-                <Button className="w-full bg-gaming-green hover:bg-gaming-green-glow text-white">Play Now</Button>
-              </CardContent>
+              </div>
             </Card>
 
             {/* Rope Play */}
-            <Card className="bg-gaming-card border-gaming-border hover:border-gaming-green transition-all duration-300 group">
-              <CardContent className="p-6">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mb-6 group-hover:bg-gaming-green/30 transition-colors">
-                  <Users className="w-8 h-8 text-gaming-green" />
+            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 bg-gradient-to-br from-green-500 to-green-600 text-white border-0 game-card-hover animate-fade-in-up animation-delay-300">
+              <div className="h-48 bg-gradient-to-br from-green-400 to-green-700 relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute top-3 right-3 w-4 h-4 bg-green-300 rounded-full animate-pulse opacity-80"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <Badge className="bg-green-700/50 text-white mb-2 hover:bg-green-600/50 transition-colors duration-300">Climbing</Badge>
+                  <h3 className="text-xl font-bold mb-2 transform transition-transform duration-300 group-hover:scale-105">Rope Play</h3>
+                  <p className="text-sm opacity-90">Climb, swing, and conquer rope challenges</p>
                 </div>
-                <h3 className="text-2xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Rope Play</h3>
-                <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 mb-4">Medium</Badge>
-                <p className="text-gray-300 mb-6">Climb, swing, and conquer our exciting rope adventure course.</p>
-                <Button className="w-full bg-gaming-green hover:bg-gaming-green-glow text-white">Play Now</Button>
+              </div>
+            </Card>
+
+            {/* Dance for the Winner */}
+            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 bg-gradient-to-br from-purple-500 to-purple-600 text-white border-0 game-card-hover animate-fade-in-up animation-delay-400">
+              <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-700 relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute top-6 left-6 w-5 h-5 bg-purple-300 rounded-full animate-bounce delay-150 opacity-70"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <Badge className="bg-purple-700/50 text-white mb-2 hover:bg-purple-600/50 transition-colors duration-300">Competition</Badge>
+                  <h3 className="text-xl font-bold mb-2 transform transition-transform duration-300 group-hover:scale-105">Dance for the Winner</h3>
+                  <p className="text-sm opacity-90">Show off your moves in our dance competition</p>
+                </div>
+              </div>
+            </Card>
+
+            {/* Food Fest Competition */}
+            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 bg-gradient-to-br from-orange-500 to-orange-600 text-white border-0 game-card-hover animate-fade-in-up animation-delay-500">
+              <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-700 relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="absolute top-5 right-5 w-6 h-6 bg-orange-300 rounded-full animate-spin opacity-60"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <Badge className="bg-orange-700/50 text-white mb-2 hover:bg-orange-600/50 transition-colors duration-300">Food & Fun</Badge>
+                  <h3 className="text-xl font-bold mb-2 transform transition-transform duration-300 group-hover:scale-105">Food Fest Competition</h3>
+                  <p className="text-sm opacity-90">Test your taste buds and win prizes</p>
+                </div>
+              </div>
+            </Card>
+
+            {/* All Games */}
+            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 bg-gradient-to-br from-yellow-500 to-yellow-600 text-white border-0 game-card-hover animate-fade-in-up animation-delay-600">
+              <div className="h-48 bg-gradient-to-br from-yellow-400 to-yellow-700 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute top-2 left-2 w-3 h-3 bg-yellow-300 rounded-full animate-ping opacity-50"></div>
+                <div className="absolute bottom-2 right-2 w-4 h-4 bg-white rounded-full animate-pulse opacity-60"></div>
+                <div className="text-center relative z-10">
+                  <div className="text-4xl mb-4 animate-bounce">🎯</div>
+                  <h3 className="text-xl font-bold mb-2 transform transition-transform duration-300 group-hover:scale-105">And More!</h3>
+                  <p className="text-sm opacity-90">Discover all our exciting activities</p>
+                </div>
+              </div>
+            </Card>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="products" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-8 animate-fade-in-up">Products</h2>
+            <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+              <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
+                <div className="text-center">
+                  <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center">
+                    <ShoppingBag className="w-16 h-16 text-gray-500" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-gray-800 mb-4">Coming Soon!</h3>
+                  <p className="text-lg text-gray-600 mb-6">
+                    We're working on bringing you amazing Happy 2 Play products including branded shoes, 
+                    keychains, jackets, and more. Stay tuned for updates!
+                  </p>
+                  <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-semibold px-8 py-3 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl">
+                    Notify Me When Available
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="bg-gaming-card border-gaming-border">
-              <CardContent className="p-8 text-center">
-                <div className="text-5xl font-black text-gaming-green mb-2" style={{ fontFamily: 'Orbitron, monospace' }}>500+</div>
-                <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Happy Families</h3>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-gaming-card border-gaming-border">
-              <CardContent className="p-8 text-center">
-                <div className="text-5xl font-black text-gaming-green mb-2" style={{ fontFamily: 'Orbitron, monospace' }}>24/7</div>
-                <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Fun Available</h3>
+      {/* Courses Section */}
+      <section id="courses" className="py-20 bg-gradient-to-br from-green-100 via-emerald-100 to-teal-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-gray-800 mb-8 animate-fade-in-up">Courses</h2>
+            <Card className="bg-gradient-to-br from-purple-100 to-pink-100 border-0 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up animation-delay-200">
+              <CardContent className="p-12 relative overflow-hidden">
+                <div className="absolute top-4 left-4 w-8 h-8 bg-purple-300 rounded-full animate-float opacity-60"></div>
+                <div className="absolute bottom-4 right-4 w-6 h-6 bg-pink-300 rounded-full animate-bounce opacity-70"></div>
+                <div className="text-6xl mb-6 animate-bounce">🚀</div>
+                <CardTitle className="text-3xl mb-4 hover:text-purple-600 transition-colors duration-300">Something Amazing is Coming Soon!</CardTitle>
+                <CardDescription className="text-lg mb-8 text-gray-600">
+                  We're working on exciting new courses that will take your family entertainment experience to the next level. 
+                  Stay tuned for updates on our specialized training programs and skill-building workshops.
+                </CardDescription>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-full font-semibold transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Notify Me
+                  </Button>
+                  <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white px-8 py-3 rounded-full font-semibold transform hover:scale-110 transition-all duration-300">
+                    Learn More
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Join Our Team Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-5xl font-black text-white mb-6" style={{ fontFamily: 'Orbitron, monospace' }}>Join Our Team</h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-16" style={{ fontFamily: 'Exo 2, sans-serif' }}>
-            Be part of something amazing! We're looking for passionate individuals who want to create unforgettable experiences.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Flexible Hours */}
-            <Card className="bg-gaming-card border-gaming-border">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-8 h-8 text-gaming-green" />
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800 relative overflow-hidden">
+        <div className="absolute top-10 left-10 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-6 h-6 bg-emerald-400 rounded-full animate-bounce opacity-40"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center mb-16 animate-fade-in-up bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">Visit Our Location</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="animate-fade-in-up animation-delay-200">
+                <h3 className="text-2xl font-bold mb-6 text-green-700">Get in Touch</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white">
+                      <MapPin className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-semibold group-hover:text-green-600 transition-colors duration-300">Location</p>
+                      <p className="text-gray-600">123 Family Fun Street, Entertainment District</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-gradient-to-r from-emerald-500 to-teal-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white">
+                      <Phone className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-semibold group-hover:text-emerald-600 transition-colors duration-300">Phone</p>
+                      <p className="text-gray-600">+91 74067 98522</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-gradient-to-r from-teal-500 to-green-500 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white">
+                      <Clock className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-semibold group-hover:text-teal-600 transition-colors duration-300">Hours</p>
+                      <p className="text-gray-600">Mon-Sun: 10AM - 10PM</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4 group">
+                    <div className="bg-gradient-to-r from-green-400 to-emerald-400 w-12 h-12 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 text-white">
+                      <Star className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-semibold group-hover:text-green-600 transition-colors duration-300">Rating</p>
+                      <div className="flex items-center space-x-1">
+                        <div className="flex text-yellow-400">
+                          <Star className="w-4 h-4 fill-current animate-pulse" />
+                          <Star className="w-4 h-4 fill-current animate-pulse delay-100" />
+                          <Star className="w-4 h-4 fill-current animate-pulse delay-200" />
+                          <Star className="w-4 h-4 fill-current animate-pulse delay-300" />
+                          <Star className="w-4 h-4 fill-current animate-pulse delay-500" />
+                        </div>
+                        <span className="text-gray-600 text-sm">(4.0/5.0)</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Flexible Hours</h3>
-                <p className="text-gray-300">Work schedules that fit your lifestyle and commitments.</p>
-              </CardContent>
-            </Card>
-
-            {/* Growth Opportunities */}
-            <Card className="bg-gaming-card border-gaming-border">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Growth Opportunities</h3>
-                <p className="text-gray-300">Advance your career with comprehensive training and development.</p>
-              </CardContent>
-            </Card>
-
-            {/* Student Friendly */}
-            <Card className="bg-gaming-card border-gaming-border">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <GraduationCap className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Student Friendly</h3>
-                <p className="text-gray-300">Perfect for students looking for part-time opportunities.</p>
-              </CardContent>
-            </Card>
-
-            {/* Fun Environment */}
-            <Card className="bg-gaming-card border-gaming-border">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Fun Environment</h3>
-                <p className="text-gray-300">Work in an exciting, energetic, and positive atmosphere.</p>
-              </CardContent>
-            </Card>
-
-            {/* Team Spirit */}
-            <Card className="bg-gaming-card border-gaming-border">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Team Spirit</h3>
-                <p className="text-gray-300">Join a supportive team that values collaboration and friendship.</p>
-              </CardContent>
-            </Card>
-
-            {/* Competitive Pay */}
-            <Card className="bg-gaming-card border-gaming-border">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-2" style={{ fontFamily: 'Exo 2, sans-serif' }}>Competitive Pay</h3>
-                <p className="text-gray-300">Excellent compensation packages with performance bonuses.</p>
-              </CardContent>
-            </Card>
+              </div>
+              <div className="animate-fade-in-up animation-delay-300">
+                <h3 className="text-2xl font-bold mb-6 text-green-700">Ready to Play?</h3>
+                <p className="text-gray-600 mb-6">
+                  Come visit us for an unforgettable family experience! No reservations needed - just bring your 
+                  family and get ready for hours of fun and excitement.
+                </p>
+                <Button size="lg" className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold w-full sm:w-auto transform hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-green-500/50">
+                  Get Directions
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Ready to Start Section */}
-      <section className="py-20 px-4 text-center">
-        <div className="container mx-auto">
-          <h2 className="text-5xl font-black text-gaming-green mb-6 animate-gaming-glow" style={{ fontFamily: 'Orbitron, monospace' }}>
-            Ready to Start Your Adventure?
-          </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-12" style={{ fontFamily: 'Exo 2, sans-serif' }}>
-            Join the HAPPY2PLAY family and help us create magical moments for everyone!
-          </p>
-          <Button size="lg" className="bg-gaming-green hover:bg-gaming-green-glow text-white font-bold text-xl px-12 py-4 rounded-lg">
-            Apply Now
-          </Button>
-        </div>
-      </section>
-
-      {/* Gaming Gear Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
-          <h2 className="text-5xl font-black text-white mb-6" style={{ fontFamily: 'Orbitron, monospace' }}>Gaming Gear</h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-16" style={{ fontFamily: 'Exo 2, sans-serif' }}>
-            Exclusive HAPPY2PLAY merchandise and gaming accessories are on their way! Be the first to get your hands on our premium collection.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {/* Gaming Shoes */}
-            <Card className="bg-gaming-card border-gaming-border relative">
-              <div className="absolute top-4 right-4">
-                <Badge className="bg-gaming-green text-white">Coming Soon</Badge>
-              </div>
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-4" style={{ fontFamily: 'Exo 2, sans-serif' }}>Gaming Shoes</h3>
-                <p className="text-gray-300 mb-6">High-performance footwear designed for ultimate gaming comfort.</p>
-                <Button variant="outline" className="border-gaming-green text-gaming-green hover:bg-gaming-green hover:text-white">
-                  Notify Me
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* HAPPY2PLAY Keychains */}
-            <Card className="bg-gaming-card border-gaming-border relative">
-              <div className="absolute top-4 right-4">
-                <Badge className="bg-gaming-green text-white">Coming Soon</Badge>
-              </div>
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-4" style={{ fontFamily: 'Exo 2, sans-serif' }}>HAPPY2PLAY Keychains</h3>
-                <p className="text-gray-300 mb-6">Collectible keychains featuring your favorite game characters.</p>
-                <Button variant="outline" className="border-gaming-green text-gaming-green hover:bg-gaming-green hover:text-white">
-                  Notify Me
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Premium Gaming Jackets */}
-            <Card className="bg-gaming-card border-gaming-border relative">
-              <div className="absolute top-4 right-4">
-                <Badge className="bg-gaming-green text-white">Coming Soon</Badge>
-              </div>
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-4" style={{ fontFamily: 'Exo 2, sans-serif' }}>Premium Gaming Jackets</h3>
-                <p className="text-gray-300 mb-6">Stylish jackets that show your gaming pride in comfort.</p>
-                <Button variant="outline" className="border-gaming-green text-gaming-green hover:bg-gaming-green hover:text-white">
-                  Notify Me
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Achievement Badges */}
-            <Card className="bg-gaming-card border-gaming-border relative">
-              <div className="absolute top-4 right-4">
-                <Badge className="bg-gaming-green text-white">Coming Soon</Badge>
-              </div>
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-gaming-green/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Trophy className="w-8 h-8 text-gaming-green" />
-                </div>
-                <h3 className="text-xl font-bold text-gaming-green mb-4" style={{ fontFamily: 'Exo 2, sans-serif' }}>Achievement Badges</h3>
-                <p className="text-gray-300 mb-6">Physical badges to commemorate your gaming accomplishments.</p>
-                <Button variant="outline" className="border-gaming-green text-gaming-green hover:bg-gaming-green hover:text-white">
-                  Notify Me
-                </Button>
-              </CardContent>
-            </Card>
+      {/* Footer */}
+      <footer className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 text-gray-800 py-8 border-t border-green-200/50">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="animate-fade-in-up">
+              <span className="font-bold text-xl bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">HAPPY2PLAY</span>
+            </div>
+            <p className="text-gray-600 text-center md:text-right animate-fade-in-up animation-delay-200">© 2025 Happy 2 Play. All rights reserved. Creating family memories since day one.</p>
           </div>
         </div>
-      </section>
-
-      {/* Stay Updated Section */}
-      <section className="py-20 px-4 text-center">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-black text-white mb-6" style={{ fontFamily: 'Orbitron, monospace' }}>Stay Updated</h2>
-          <p className="text-lg text-gray-300 max-w-4xl mx-auto mb-8" style={{ fontFamily: 'Exo 2, sans-serif' }}>
-            Subscribe to get notified when our exclusive gaming merchandise launches!
-          </p>
-        </div>
-      </section>
-    </div>
-  );
+      </footer>
+    </div>;
 };
-
 export default Index;

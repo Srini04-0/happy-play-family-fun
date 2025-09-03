@@ -7,52 +7,44 @@
 
 @layer base {
   :root {
-    /* Gaming Dark Theme */
-    --background: 220 13% 8%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 220 13% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 220 13% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 142 76% 36%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 220 13% 15%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 220 13% 12%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 142 76% 36%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 20%;
-    --input: 220 13% 15%;
-    --ring: 142 76% 36%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Gaming specific colors */
-    --gaming-green: 142 76% 36%;
-    --gaming-green-glow: 142 76% 50%;
-    --gaming-dark: 220 13% 8%;
-    --gaming-card: 220 13% 12%;
-    --gaming-border: 220 13% 20%;
-
-    --sidebar-background: 220 13% 10%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 142 76% 36%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 13% 15%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 220 13% 20%;
-    --sidebar-ring: 142 76% 36%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -93,30 +85,26 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Orbitron', 'Exo 2', 'Inter', 'Segoe UI', sans-serif;
-    background: hsl(var(--gaming-dark));
-    color: hsl(var(--foreground));
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   }
 }
 
-/* Gaming Theme Animations */
-@keyframes gaming-glow {
+/* Custom animations for Happy 2 Play */
+@keyframes gentle-bounce {
   0%, 100% { 
-    text-shadow: 0 0 10px hsl(var(--gaming-green) / 0.3),
-                 0 0 20px hsl(var(--gaming-green) / 0.2);
+    transform: translateY(0);
   }
   50% { 
-    text-shadow: 0 0 15px hsl(var(--gaming-green) / 0.5),
-                 0 0 25px hsl(var(--gaming-green) / 0.3);
+    transform: translateY(-10px);
   }
 }
 
-@keyframes card-glow {
+@keyframes pulse-glow {
   0%, 100% { 
-    box-shadow: 0 0 20px hsl(var(--gaming-green) / 0.1);
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
   }
   50% { 
-    box-shadow: 0 0 30px hsl(var(--gaming-green) / 0.2);
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
   }
 }
 
