@@ -179,9 +179,17 @@ const Index = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="mb-8 animate-fade-in-up text-left font-medium text-6xl text-lime-950">About Us</h2>
             <Card className="shadow-xl border-0 bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-              <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200">
-                <p className="text-gray-700 mb-6 text-left text-lg font-light">Happy2Play is a premier family entertainment center dedicated to bringing families together through fun, interactive experiences. Our physical location offers a variety of exciting games and activities designed for all ages.</p>
-                <p className="text-lg text-gray-700 mb-8 text-left font-light">
+              <CardContent className="p-8 md:p-12 animate-fade-in-up animation-delay-200 rounded-md">
+                <p className="text-gray-700 mb-6 text-left text-lg font-light">About Us
+We are shaping the future of events, lifestyle, and opportunities through one Dynamic platform. Our Startup Brings Together sports Activities one on one with companies schools  colleges Events Birthday party celebrations, online courses, job opportunities, Apparel solutions, And food festivals – Making us a one-stop hub for both individuals and businesses.
+We believe in blending celebration, learning, career growth, and lifestyle experiences into a seamless ecosystem. We Are Hosting an Event, find a job, upskill, showcase talent, or enjoy a Festival, our Platform Is Designed for you.
+
+Products of H2P in progress....
+‌H2P Solutions Helps you identify the Right Deserved Apparels To know your style Delivers it According to your Satisfaction 
+1)Garments 2)shoes 3)track phant 4) jacket
+
+              </p>
+                <p className="text-lg mb-8 text-gray-950 text-left font-normal">
                   We believe that family time is precious, and we've created a space where parents and children 
                   can bond, compete, and create unforgettable memories together. From thrilling physical challenges 
                   to friendly competitions, we have something for everyone.
