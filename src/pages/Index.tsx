@@ -115,7 +115,7 @@ const Index = () => {
                 </span>
               </h1>
               <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black mb-4 leading-tight relative text-center">
-                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-bounce">
+                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-bounce block text-center mx-auto">
                   HAPPY2PLAY
                 </span>
                 {/* Very Light and Slow Glowing Effect */}
