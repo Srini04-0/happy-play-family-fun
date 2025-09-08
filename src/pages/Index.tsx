@@ -114,12 +114,12 @@ const Index = () => {
                   Welcome
                 </span>
               </h1>
-              <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black mb-4 leading-tight relative text-center w-full">
-                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-bounce block">
+              <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black mb-4 leading-tight relative">
+                <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent animate-bounce">
                   HAPPY2PLAY
                 </span>
                 {/* Very Light and Slow Glowing Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent blur-xl opacity-10 animate-[pulse_4s_ease-in-out_infinite] text-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent blur-xl opacity-10 animate-[pulse_4s_ease-in-out_infinite]">
                   HAPPY2PLAY
                 </div>
               </h2>
